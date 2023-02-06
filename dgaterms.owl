@@ -1,435 +1,697 @@
-@prefix : <http://anon/dgaterms#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix dpv: <https://w3id.org/dpv#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://anon/dgaterms> .
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://anon/dgaterms#"
+     xml:base="http://anon/dgaterms"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:dpv="https://w3id.org/dpv#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:odrl="http://www.w3.org/ns/odrl/2/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="http://anon/dgaterms">
+        <dct:creator>Anon anon</dct:creator>
+        <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <rdfs:label>Data Governance Act Vocabulary</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://anon/dgaterms#conversionFormat -->
+
+    <owl:AnnotationProperty rdf:about="http://anon/dgaterms#conversionFormat">
+        <dct:source>DGA 12.d</dct:source>
+        <rdfs:comment xml:lang="en">The formats to which the data is allowed to be converted</rdfs:comment>
+        <rdfs:label xml:lang="en">conversion format</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/format"/>
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#Data"/>
+    </owl:AnnotationProperty>
+    
+
 
-<http://anon/dgaterms> rdf:type owl:Ontology ;
-                        dct:creator "Anon anon" ;
-                        dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-                        rdfs:label "Data Governance Act Vocabulary" .
+    <!-- http://anon/dgaterms#hasForm -->
 
-#################################################################
-#    Annotation properties
-#################################################################
+    <owl:AnnotationProperty rdf:about="http://anon/dgaterms#hasForm">
+        <dct:source>DGA 11.6.b</dct:source>
+        <rdfs:comment xml:lang="en">Indicates the form of an entity</rdfs:comment>
+        <rdfs:label xml:lang="en">has form</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    </owl:AnnotationProperty>
+    
 
-###  http://anon/dgaterms#conversionFormat
-:conversionFormat dct:source "DGA 12.d" ;
-                  rdfs:comment "The formats to which the data is allowed to be converted"@en ;
-                  rdfs:label "conversion format"@en ;
-                  rdf:type owl:AnnotationProperty ;
-                  rdfs:subPropertyOf dct:format ;
-                  rdfs:domain dpv:Data .
 
+    <!-- http://anon/dgaterms#hasLegalStatus -->
 
-###  http://anon/dgaterms#hasForm
-:hasForm dct:source "DGA 11.6.b" ;
-         rdfs:comment "Indicates the form of an entity"@en ;
-         rdfs:label "has form"@en ;
-         rdf:type owl:AnnotationProperty ;
-         rdfs:domain dpv:LegalEntity .
+    <owl:AnnotationProperty rdf:about="http://anon/dgaterms#hasLegalStatus">
+        <dct:source>DGA 11.6.b</dct:source>
+        <rdfs:comment xml:lang="en">Indicates the legal status of an entity</rdfs:comment>
+        <rdfs:label xml:lang="en">has legal status</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    </owl:AnnotationProperty>
+    
 
 
-###  http://anon/dgaterms#hasLegalStatus
-:hasLegalStatus dct:source "DGA 11.6.b" ;
-                rdfs:comment "Indicates the legal status of an entity"@en ;
-                rdfs:label "has legal status"@en ;
-                rdf:type owl:AnnotationProperty ;
-                rdfs:domain dpv:LegalEntity .
+    <!-- http://anon/dgaterms#hasOwnershipStructure -->
 
+    <owl:AnnotationProperty rdf:about="http://anon/dgaterms#hasOwnershipStructure">
+        <dct:source>DGA 11.6.b</dct:source>
+        <rdfs:comment xml:lang="en">Indicates the ownership structure of an entity</rdfs:comment>
+        <rdfs:label xml:lang="en">has ownership structure</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    </owl:AnnotationProperty>
+    
 
-###  http://anon/dgaterms#hasOwnershipStructure
-:hasOwnershipStructure dct:source "DGA 11.6.b" ;
-                       rdfs:comment "Indicates the ownership structure of an entity"@en ;
-                       rdfs:label "has ownership structure"@en ;
-                       rdf:type owl:AnnotationProperty ;
-                       rdfs:domain dpv:LegalEntity .
 
+    <!-- http://anon/dgaterms#hasRegistrationNumber -->
 
-###  http://anon/dgaterms#hasRegistrationNumber
-:hasRegistrationNumber dct:source "DGA 11.6.b" ;
-                       rdfs:comment "Indicates the registration number of an entity"@en ;
-                       rdfs:label "has registration number"@en ;
-                       rdf:type owl:AnnotationProperty ;
-                       rdfs:domain dpv:LegalEntity .
+    <owl:AnnotationProperty rdf:about="http://anon/dgaterms#hasRegistrationNumber">
+        <dct:source>DGA 11.6.b</dct:source>
+        <rdfs:comment xml:lang="en">Indicates the registration number of an entity</rdfs:comment>
+        <rdfs:label xml:lang="en">has registration number</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    </owl:AnnotationProperty>
+    
 
 
-###  http://anon/dgaterms#hasSourceOfIncome
-:hasSourceOfIncome dct:source "DGA 19.4.d" ;
-                   rdfs:comment "Indicates sources of income of the entity"@en ;
-                   rdfs:label "has source of income"@en ;
-                   rdf:type owl:AnnotationProperty ;
-                   rdfs:domain dpv:LegalEntity .
+    <!-- http://anon/dgaterms#hasSourceOfIncome -->
 
+    <owl:AnnotationProperty rdf:about="http://anon/dgaterms#hasSourceOfIncome">
+        <dct:source>DGA 19.4.d</dct:source>
+        <rdfs:comment xml:lang="en">Indicates sources of income of the entity</rdfs:comment>
+        <rdfs:label xml:lang="en">has source of income</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    </owl:AnnotationProperty>
+    
 
-###  http://anon/dgaterms#hasSourceOfRevenue
-:hasSourceOfRevenue dct:source "DGA 20.2.e" ;
-                    rdfs:comment "Indicates sources of revenue of the entity"@en ;
-                    rdfs:label "has source of revenue"@en ;
-                    rdf:type owl:AnnotationProperty ;
-                    rdfs:domain dpv:LegalEntity .
 
+    <!-- http://anon/dgaterms#hasSourceOfRevenue -->
 
-###  http://anon/dgaterms#hasStatute
-:hasStatute dct:source "DGA 19.4.c" ;
-            rdfs:comment "Indicates the statute of the entity"@en ;
-            rdfs:label "has statute"@en ;
-            rdf:type owl:AnnotationProperty ;
-            rdfs:domain dpv:LegalEntity .
+    <owl:AnnotationProperty rdf:about="http://anon/dgaterms#hasSourceOfRevenue">
+        <dct:source>DGA 20.2.e</dct:source>
+        <rdfs:comment xml:lang="en">Indicates sources of revenue of the entity</rdfs:comment>
+        <rdfs:label xml:lang="en">has source of revenue</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    </owl:AnnotationProperty>
+    
 
 
-###  http://anon/dgaterms#hasSubsidiary
-:hasSubsidiary dct:source "DGA 11.6.b" ;
-               rdfs:comment "Indicates a subsidiary of an entity"@en ;
-               rdfs:label "has subsidiary"@en ;
-               rdf:type owl:AnnotationProperty ;
-               rdfs:domain dpv:LegalEntity .
+    <!-- http://anon/dgaterms#hasStatute -->
 
+    <owl:AnnotationProperty rdf:about="http://anon/dgaterms#hasStatute">
+        <dct:source>DGA 19.4.c</dct:source>
+        <rdfs:comment xml:lang="en">Indicates the statute of the entity</rdfs:comment>
+        <rdfs:label xml:lang="en">has statute</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    </owl:AnnotationProperty>
+    
 
-###  http://anon/dgaterms#hasThirdCountryJurisdiction
-:hasThirdCountryJurisdiction rdf:type owl:AnnotationProperty ;
-                             rdfs:subPropertyOf dpv:hasJurisdiction .
 
+    <!-- http://anon/dgaterms#hasSubsidiary -->
 
-###  http://purl.org/dc/terms/creator
-dct:creator rdf:type owl:AnnotationProperty .
+    <owl:AnnotationProperty rdf:about="http://anon/dgaterms#hasSubsidiary">
+        <dct:source>DGA 11.6.b</dct:source>
+        <rdfs:comment xml:lang="en">Indicates a subsidiary of an entity</rdfs:comment>
+        <rdfs:label xml:lang="en">has subsidiary</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    </owl:AnnotationProperty>
+    
 
 
-###  http://purl.org/dc/terms/format
-dct:format rdf:type owl:AnnotationProperty .
+    <!-- http://anon/dgaterms#hasThirdCountryJurisdiction -->
 
+    <owl:AnnotationProperty rdf:about="http://anon/dgaterms#hasThirdCountryJurisdiction">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasJurisdiction"/>
+        <rdfs:range rdf:resource="https://w3id.org/dpv#Location"/>
+    </owl:AnnotationProperty>
+    
 
-###  http://purl.org/dc/terms/license
-dct:license rdf:type owl:AnnotationProperty .
 
+    <!-- http://purl.org/dc/terms/creator -->
 
-###  http://purl.org/dc/terms/source
-dct:source rdf:type owl:AnnotationProperty .
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
 
 
-###  http://www.w3.org/2004/02/skos/core#related
-<http://www.w3.org/2004/02/skos/core#related> rdf:type owl:AnnotationProperty .
+    <!-- http://purl.org/dc/terms/format -->
 
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/format"/>
+    
 
-###  https://w3id.org/dpv#hasJurisdiction
-dpv:hasJurisdiction rdf:type owl:AnnotationProperty .
 
+    <!-- http://purl.org/dc/terms/license -->
 
-#################################################################
-#    Datatypes
-#################################################################
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
 
-###  http://www.w3.org/2001/XMLSchema#date
-xsd:date rdf:type rdfs:Datatype .
 
+    <!-- http://purl.org/dc/terms/source -->
 
-#################################################################
-#    Object Properties
-#################################################################
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/source"/>
+    
 
-###  http://anon/dgaterms#hasSingleInformationPoint
-:hasSingleInformationPoint rdf:type owl:ObjectProperty ;
-                           rdfs:domain :PublicSectorBody ;
-                           rdfs:range :SingleInformationPoint ;
-                           rdfs:comment "Indicates the responsible single information point entity"@en ;
-                           rdfs:label "has single information point"@en .
 
+    <!-- http://www.w3.org/2004/02/skos/core#related -->
 
-###  http://anon/dgaterms#hasThirdCountryJurisdiction
-:hasThirdCountryJurisdiction rdf:type owl:ObjectProperty ;
-                             rdfs:range dpv:Location .
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#related"/>
+    
 
 
-#################################################################
-#    Data properties
-#################################################################
+    <!-- https://w3id.org/dpv#hasJurisdiction -->
 
-###  http://anon/dgaterms#connectedWith
-:connectedWith rdf:type owl:DatatypeProperty ;
-               rdfs:domain :DataUser ;
-               rdfs:range dpv:LegalEntity ;
-               dct:source "DGA 12.c" ;
-               rdfs:comment "Indicates a connection between entities who use a data intermediation service"@en ;
-               rdfs:label "connected with"@en .
+    <owl:AnnotationProperty rdf:about="https://w3id.org/dpv#hasJurisdiction"/>
+    
 
 
-###  http://anon/dgaterms#hasActivityStartingDate
-:hasActivityStartingDate rdf:type owl:DatatypeProperty ;
-                         rdfs:subPropertyOf dct:date ;
-                         rdfs:domain dpv:LegalEntity ;
-                         rdfs:range xsd:date ;
-                         dct:source "DGA 11.6.g" ;
-                         rdfs:comment "Indicates the date when an entity starts its activity"@en ;
-                         rdfs:label "has activity starting date"@en .
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
+    
 
-###  http://anon/dgaterms#hasFee
-:hasFee rdf:type owl:DatatypeProperty ;
-        rdfs:domain dpv:LegalEntity ;
-        rdfs:range xsd:decimal ;
-        dct:source "DGA 2.10" ;
-        rdfs:comment "Indicates the fee charged by an entity to provide a service"@en ;
-        rdfs:label "has fee"@en .
 
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
 
-###  http://anon/dgaterms#hasProcessingDate
-:hasProcessingDate rdf:type owl:DatatypeProperty ;
-                   rdfs:subPropertyOf dct:date ;
-                   rdfs:range xsd:date ;
-                   dct:source "DGA 20.1.b" ;
-                   rdfs:comment "Indicates the date when an entity starts to process data"@en ;
-                   rdfs:label "has processing date"@en .
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
 
 
-###  http://anon/dgaterms#isFreeOfCharge
-:isFreeOfCharge rdf:type owl:DatatypeProperty ;
-                rdfs:domain dpv:LegalEntity ;
-                rdfs:range xsd:boolean ;
-                dct:source "DGA 2.10" ;
-                rdfs:comment "Indicates if the service provided by an entity is free of charge"@en ;
-                rdfs:label "is free of charge"@en .
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
+    
 
-###  http://purl.org/dc/terms/date
-dct:date rdf:type owl:DatatypeProperty .
 
+    <!-- http://anon/dgaterms#connectedWith -->
 
-#################################################################
-#    Classes
-#################################################################
+    <owl:ObjectProperty rdf:about="http://anon/dgaterms#connectedWith">
+        <rdfs:domain rdf:resource="http://anon/dgaterms#DataUser"/>
+        <rdfs:range rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    </owl:ObjectProperty>
+    
 
-###  http://anon/dgaterms#AggregatedData
-:AggregatedData rdf:type owl:Class ;
-                dct:source "DGA 5.3.a.ii" ;
-                rdfs:label "Aggregated Data"@en .
 
+    <!-- http://anon/dgaterms#hasSingleInformationPoint -->
 
-###  http://anon/dgaterms#AltruisticPurpose
-:AltruisticPurpose rdf:type owl:Class ;
-                   dct:source "DGA 2.16" ;
-                   rdfs:label "Altruistic Purpose"@en .
+    <owl:ObjectProperty rdf:about="http://anon/dgaterms#hasSingleInformationPoint">
+        <rdfs:domain rdf:resource="http://anon/dgaterms#PublicSectorBody"/>
+        <rdfs:range rdf:resource="http://anon/dgaterms#SingleInformationPoint"/>
+        <rdfs:comment xml:lang="en">Indicates the responsible single information point entity</rdfs:comment>
+        <rdfs:label xml:lang="en">has single information point</rdfs:label>
+    </owl:ObjectProperty>
+    
 
 
-###  http://anon/dgaterms#CombatClimateChange
-:CombatClimateChange rdf:type owl:Class ;
-                     dct:source "DGA 2.16" ;
-                     rdfs:label "CombatClimateChange"@en .
+    <!-- http://anon/dgaterms#hasThirdCountryJurisdiction -->
 
+    <owl:ObjectProperty rdf:about="http://anon/dgaterms#hasThirdCountryJurisdiction"/>
+    
 
-###  http://anon/dgaterms#CommercialConfidentiality
-:CommercialConfidentiality rdf:type owl:Class ;
-                           dct:source "DGA 3.1.a" ;
-                           rdfs:label "Commercial Confidentiality"@en .
 
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
-###  http://anon/dgaterms#CompetentBody
-:CompetentBody rdf:type owl:Class ;
-               dct:source "DGA 7" ;
-               rdfs:label "CompetentBody"@en .
+    
 
 
-###  http://anon/dgaterms#ConsentAndPermissionManagement
-:ConsentAndPermissionManagement rdf:type owl:Class ;
-                                dct:source "DGA 12.n" ;
-                                rdfs:label "Consent and Permission Management"@en .
+    <!-- http://anon/dgaterms#connectedWith -->
 
+    <owl:DatatypeProperty rdf:about="http://anon/dgaterms#connectedWith"/>
+    
 
-###  http://anon/dgaterms#DataAltruismOrganisation
-:DataAltruismOrganisation rdf:type owl:Class ;
-                          dct:source "DGA 2.16, 18" ;
-                          rdfs:label "Data Altruism Organisation"@en .
 
+    <!-- http://anon/dgaterms#hasActivityStartingDate -->
 
-###  http://anon/dgaterms#DataCooperativeServiceProvider
-:DataCooperativeServiceProvider rdf:type owl:Class ;
-                                dct:source "DGA 2.15, 10.c" ;
-                                rdfs:label "Data Cooperative Service Provider"@en .
+    <owl:DatatypeProperty rdf:about="http://anon/dgaterms#hasActivityStartingDate">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/date"/>
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <dct:source>DGA 11.6.g</dct:source>
+        <rdfs:comment xml:lang="en">Indicates the date when an entity starts its activity</rdfs:comment>
+        <rdfs:label xml:lang="en">has activity starting date</rdfs:label>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://anon/dgaterms#DataExchangeMethod
-:DataExchangeMethod rdf:type owl:Class ;
-                    dct:source "DGA 12.e" ;
-                    rdfs:label "Data Exchange Method"@en .
+    <!-- http://anon/dgaterms#hasFee -->
 
+    <owl:DatatypeProperty rdf:about="http://anon/dgaterms#hasFee">
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <dct:source>DGA 2.10</dct:source>
+        <rdfs:comment xml:lang="en">Indicates the fee charged by an entity to provide a service</rdfs:comment>
+        <rdfs:label xml:lang="en">has fee</rdfs:label>
+    </owl:DatatypeProperty>
+    
 
-###  http://anon/dgaterms#DataHolder
-:DataHolder rdf:type owl:Class ;
-            dct:source "DGA 2.8" ;
-            rdfs:label "Data Holder"@en .
 
+    <!-- http://anon/dgaterms#hasProcessingDate -->
 
-###  http://anon/dgaterms#DataIntermediationServiceProvider
-:DataIntermediationServiceProvider rdf:type owl:Class ;
-                                   dct:source "DGA 2.11" ;
-                                   rdfs:label "Data Intermediation Service Provider"@en .
+    <owl:DatatypeProperty rdf:about="http://anon/dgaterms#hasProcessingDate">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/date"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <dct:source>DGA 20.1.b</dct:source>
+        <rdfs:comment xml:lang="en">Indicates the date when an entity starts to process data</rdfs:comment>
+        <rdfs:label xml:lang="en">has processing date</rdfs:label>
+    </owl:DatatypeProperty>
+    
 
 
-###  http://anon/dgaterms#DataIntermediationServiceProviderForDataHolder
-:DataIntermediationServiceProviderForDataHolder rdf:type owl:Class ;
-                                                dct:source "DGA 10.a" ;
-                                                rdfs:label "Data Intermediation Service Provider for Data Holder"@en .
+    <!-- http://anon/dgaterms#isFreeOfCharge -->
 
+    <owl:DatatypeProperty rdf:about="http://anon/dgaterms#isFreeOfCharge">
+        <rdfs:domain rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <dct:source>DGA 2.10</dct:source>
+        <rdfs:comment xml:lang="en">Indicates if the service provided by an entity is free of charge</rdfs:comment>
+        <rdfs:label xml:lang="en">is free of charge</rdfs:label>
+    </owl:DatatypeProperty>
+    
 
-###  http://anon/dgaterms#DataIntermediationServiceProviderForDataSubject
-:DataIntermediationServiceProviderForDataSubject rdf:type owl:Class ;
-                                                 dct:source "DGA 10.b" ;
-                                                 rdfs:label "Data Intermediation Service Provider for Data Subject"@en .
 
+    <!-- http://purl.org/dc/terms/date -->
 
-###  http://anon/dgaterms#DataRequestProcedure
-:DataRequestProcedure rdf:type owl:Class ;
-                      dct:source "DGA 5.1" ;
-                      rdfs:label "Data Request Procedure"@en .
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/date"/>
+    
 
 
-###  http://anon/dgaterms#DataSubjectRightsManagement
-:DataSubjectRightsManagement rdf:type owl:Class ;
-                             dct:source "DGA 12.m" ;
-                             rdfs:label "Data Subject Rights Management"@en .
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
 
+    
 
-###  http://anon/dgaterms#DataUser
-:DataUser rdf:type owl:Class ;
-          dct:source "DGA 2.9" ;
-          rdfs:comment "An entity who has access an the right to use personal or non-personal data for commercial or non-commercial purposes"@en ;
-          rdfs:label "Data User"@en .
 
+    <!-- http://anon/dgaterms#AggregatedData -->
 
-###  http://anon/dgaterms#Display
-:Display rdf:type owl:Class ;
-         dct:source "DGA 2.20" ;
-         rdfs:seeAlso odrl:display .
+    <owl:Class rdf:about="http://anon/dgaterms#AggregatedData">
+        <dct:source>DGA 5.3.a.ii</dct:source>
+        <rdfs:comment xml:lang="en">Data that resulted from the aggregation of several datum</rdfs:comment>
+        <rdfs:label xml:lang="en">Aggregated Data</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://anon/dgaterms#Download
-:Download rdf:type owl:Class ;
-          dct:source "DGA 2.13, 2.20" ;
-          rdfs:label "Download"@en .
+    <!-- http://anon/dgaterms#AltruisticPurpose -->
 
+    <owl:Class rdf:about="http://anon/dgaterms#AltruisticPurpose">
+        <dct:source>DGA 2.16</dct:source>
+        <rdfs:comment xml:lang="en">Purposes associated with the voluntary sharing of data for the general interest of the public, such as healthcare or combating climate change</rdfs:comment>
+        <rdfs:label xml:lang="en">Altruistic Purpose</rdfs:label>
+    </owl:Class>
+    
 
-###  http://anon/dgaterms#EuropeanDataInnovationBoard
-:EuropeanDataInnovationBoard rdf:type owl:Class ;
-                             dct:source "DGA 29" ;
-                             rdfs:label "European Data Innovation Board"@en .
 
+    <!-- http://anon/dgaterms#CombatClimateChange -->
 
-###  http://anon/dgaterms#ImproveHealthcare
-:ImproveHealthcare rdf:type owl:Class ;
-                   dct:source "DGA 2.16" ;
-                   rdfs:label "Improve Healthcare"@en .
+    <owl:Class rdf:about="http://anon/dgaterms#CombatClimateChange">
+        <dct:source>DGA 2.16</dct:source>
+        <rdfs:comment xml:lang="en">Purposes associated with combating the causes and consequences of climate change, including reducing gas emissions and fighting emergencies such as floods or wildfires</rdfs:comment>
+        <rdfs:label xml:lang="en">CombatClimateChange</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://anon/dgaterms#ImproveMobility
-:ImproveMobility rdf:type owl:Class ;
-                 dct:source "DGA 2.16" ;
-                 rdfs:label "Improve Mobility"@en .
+    <!-- http://anon/dgaterms#CommercialConfidentiality -->
 
+    <owl:Class rdf:about="http://anon/dgaterms#CommercialConfidentiality">
+        <dct:source>DGA 3.1.a</dct:source>
+        <rdfs:comment xml:lang="en">Data held by public sector bodies can be reused on the grounds of commercial confidentiality, including business, professional and company secrets</rdfs:comment>
+        <rdfs:label xml:lang="en">Commercial Confidentiality</rdfs:label>
+    </owl:Class>
+    
 
-###  http://anon/dgaterms#Licence
-:Licence rdf:type owl:Class ;
-         dct:source "DGA 2.10" ;
-         rdfs:label "Licence"@en ;
-         rdfs:seeAlso odrl:Offer .
 
+    <!-- http://anon/dgaterms#CompetentBody -->
 
-###  http://anon/dgaterms#ModifiedData
-:ModifiedData rdf:type owl:Class ;
-              dct:source "DGA 5.3.a.ii" ;
-              rdfs:label "Modified Data"@en .
+    <owl:Class rdf:about="http://anon/dgaterms#CompetentBody">
+        <dct:source>DGA 7</dct:source>
+        <rdfs:comment xml:lang="en">An entity designated by a public sector body to provide legal and technical support on the access and reuse of public sector data</rdfs:comment>
+        <rdfs:label xml:lang="en">CompetentBody</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://anon/dgaterms#ProvideOfficialStatistics
-:ProvideOfficialStatistics rdf:type owl:Class ;
-                           dct:source "DGA 2.16" ;
-                           rdfs:label "Provide Official Statistics"@en .
+    <!-- http://anon/dgaterms#ConsentAndPermissionManagement -->
 
+    <owl:Class rdf:about="http://anon/dgaterms#ConsentAndPermissionManagement">
+        <dct:source>DGA 12.n</dct:source>
+        <rdfs:comment xml:lang="en">Methods to obtain and withdraw consent or permission to process data</rdfs:comment>
+        <rdfs:label xml:lang="en">Consent and Permission Management</rdfs:label>
+    </owl:Class>
+    
 
-###  http://anon/dgaterms#ProvidePublicServices
-:ProvidePublicServices rdf:type owl:Class ;
-                       dct:source "DGA 2.16" ;
-                       rdfs:label "Provide Public Services"@en .
 
+    <!-- http://anon/dgaterms#DataAltruismOrganisation -->
 
-###  http://anon/dgaterms#PublicPolicyMaking
-:PublicPolicyMaking rdf:type owl:Class ;
-                    dct:source "DGA 2.16" ;
-                    rdfs:label "Public Policy Making"@en .
+    <owl:Class rdf:about="http://anon/dgaterms#DataAltruismOrganisation">
+        <dct:source>DGA 2.16, 18</dct:source>
+        <rdfs:comment xml:lang="en">An non-profit organisation whom collects and shares data for altruistic purposes</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Altruism Organisation</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://anon/dgaterms#PublicSectorBody
-:PublicSectorBody rdf:type owl:Class ;
-                  dct:source "DGA 2.17, 2.18" ;
-                  rdfs:label "Public Sector Body"@en .
+    <!-- http://anon/dgaterms#DataCooperativeServiceProvider -->
 
+    <owl:Class rdf:about="http://anon/dgaterms#DataCooperativeServiceProvider">
+        <dct:source>DGA 2.15, 10.c</dct:source>
+        <rdfs:comment xml:lang="en">An entity constituted by data subjects, one-person undertakings or SMEs who provides data intermediation services and supports its members in the exercise of their data-related rights</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Cooperative Service Provider</rdfs:label>
+    </owl:Class>
+    
 
-###  http://anon/dgaterms#RegisterOfDataIAltruismActivity
-:RegisterOfDataIAltruismActivity rdf:type owl:Class ;
-                                 dct:source "DGA 20" ;
-                                 rdfs:label "Register of Data Altruism Activity"@en .
 
+    <!-- http://anon/dgaterms#DataExchangeMethod -->
 
-###  http://anon/dgaterms#RegisterOfDataIntermediationActivity
-:RegisterOfDataIntermediationActivity rdf:type owl:Class ;
-                                      dct:source "DGA 12.o" ;
-                                      rdfs:label "Register of Data Intermediation Activity"@en .
+    <owl:Class rdf:about="http://anon/dgaterms#DataExchangeMethod">
+        <dct:source>DGA 12.e</dct:source>
+        <rdfs:comment xml:lang="en">Methods to facilitate the exchange of data</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Exchange Method</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://anon/dgaterms#SafeguardIntellectualPropertyRightsOfThirdParties
-:SafeguardIntellectualPropertyRightsOfThirdParties rdf:type owl:Class ;
-                                                   dct:source "DGA 3.1.c" ;
-                                                   rdfs:label "Safeguard Intellectual Property Rights of Third Parties"@en .
+    <!-- http://anon/dgaterms#DataHolder -->
 
+    <owl:Class rdf:about="http://anon/dgaterms#DataHolder">
+        <dct:source>DGA 2.8</dct:source>
+        <rdfs:comment xml:lang="en">An entity who has the right to grant access to or to share certain personal data or non-personal data</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Holder</rdfs:label>
+    </owl:Class>
+    
 
-###  http://anon/dgaterms#SafeguardPersonalData
-:SafeguardPersonalData rdf:type owl:Class ;
-                       dct:source "DGA 3.1.d" ;
-                       rdfs:label "Safeguard Personal Data"@en .
 
+    <!-- http://anon/dgaterms#DataIntermediationServiceProvider -->
 
-###  http://anon/dgaterms#SingleInformationPoint
-:SingleInformationPoint rdf:type owl:Class ;
-                        dct:source "DGA 8" ;
-                        rdfs:label "Single Information Point"@en .
+    <owl:Class rdf:about="http://anon/dgaterms#DataIntermediationServiceProvider">
+        <dct:source>DGA 2.11</dct:source>
+        <rdfs:comment xml:lang="en">An entity who establishes commercial relationships for the data sharing between data subjects and data holders on the one hand and data users on the other</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Intermediation Service Provider</rdfs:label>
+    </owl:Class>
+    
 
 
-###  http://anon/dgaterms#StatisticalConfidentiality
-:StatisticalConfidentiality rdf:type owl:Class ;
-                            dct:source "DGA 3.1.b" ;
-                            rdfs:label "Statistical Confidentiality"@en .
+    <!-- http://anon/dgaterms#DataIntermediationServiceProviderForDataHolder -->
 
+    <owl:Class rdf:about="http://anon/dgaterms#DataIntermediationServiceProviderForDataHolder">
+        <dct:source>DGA 10.a</dct:source>
+        <rdfs:comment xml:lang="en">An entity who makes data holders&apos; data available for potential data users, including bilateral or multilateral exchanges of data and platforms and databases for the joint exploitation of data</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Intermediation Service Provider for Data Holder</rdfs:label>
+    </owl:Class>
+    
 
-###  http://anon/dgaterms#TermsOfService
-:TermsOfService rdf:type owl:Class ;
-                dct:source "DGA 12.f" ;
-                rdfs:label "Terms of Service"@en .
 
+    <!-- http://anon/dgaterms#DataIntermediationServiceProviderForDataSubject -->
 
-###  https://w3id.org/dpv#Location
-dpv:Location rdf:type owl:Class .
+    <owl:Class rdf:about="http://anon/dgaterms#DataIntermediationServiceProviderForDataSubject">
+        <dct:source>DGA 10.b</dct:source>
+        <rdfs:comment xml:lang="en">An entity who makes data subjects&apos; personal data available for potential data users</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Intermediation Service Provider for Data Subject</rdfs:label>
+    </owl:Class>
+    
 
 
-###  https://w3id.org/dpv#ResearchAndDevelopment
-dpv:ResearchAndDevelopment rdf:type owl:Class ;
-                           dct:source "DGA 2.16" .
+    <!-- http://anon/dgaterms#DataRequestProcedure -->
 
+    <owl:Class rdf:about="http://anon/dgaterms#DataRequestProcedure">
+        <dct:source>DGA 5.1</dct:source>
+        <rdfs:comment xml:lang="en">Procedure to request data for reuse via single information point</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Request Procedure</rdfs:label>
+    </owl:Class>
+    
 
-#################################################################
-#    Annotations
-#################################################################
 
-:hasDataIntermediationServiceProviderType rdfs:comment "Indicates the type of data intermediation service provider"@en ;
-                                          dct:source "DGA 11.6.f" ;
-                                          rdfs:label "has data intermediation service provider type"@en .
+    <!-- http://anon/dgaterms#DataSubjectRightsManagement -->
 
+    <owl:Class rdf:about="http://anon/dgaterms#DataSubjectRightsManagement">
+        <dct:source>DGA 12.m</dct:source>
+        <rdfs:comment xml:lang="en">Methods to facilitate the exercising of data subjects&apos; rights</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Subject Rights Management</rdfs:label>
+    </owl:Class>
+    
 
-:hasThirdCountryJurisdiction rdfs:label "has third country jurisdiction"@en ;
-                             dct:source "DGA 12.n" ;
-                             rdfs:comment "Indicates applicability of third country jurisdiction"@en .
 
+    <!-- http://anon/dgaterms#DataUser -->
 
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+    <owl:Class rdf:about="http://anon/dgaterms#DataUser">
+        <dct:source>DGA 2.9</dct:source>
+        <rdfs:comment xml:lang="en">An entity who has access an the right to use personal or non-personal data for commercial or non-commercial purposes</rdfs:comment>
+        <rdfs:label xml:lang="en">Data User</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#Display -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#Display">
+        <dct:source>DGA 2.20</dct:source>
+        <rdfs:comment xml:lang="en">Show data in an organised way so that it can be seen by the public</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/ns/odrl/2/display"/>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#Download -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#Download">
+        <dct:source>DGA 2.13, 2.20</dct:source>
+        <rdfs:comment xml:lang="en">Copy data from one computer system to another over a network, e.g., over the internet</rdfs:comment>
+        <rdfs:label xml:lang="en">Download</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#EuropeanDataInnovationBoard -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#EuropeanDataInnovationBoard">
+        <dct:source>DGA 29</dct:source>
+        <rdfs:comment xml:lang="en">An authority tasked with overseeing the activities of data intermediation service providers and data altruism organisations</rdfs:comment>
+        <rdfs:label xml:lang="en">European Data Innovation Board</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#ImproveHealthcare -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#ImproveHealthcare">
+        <dct:source>DGA 2.16</dct:source>
+        <rdfs:comment xml:lang="en">Purposes associated with improving the public healthcare systems across the Member States, including improving personalised treatments and helping cure chronic diseases</rdfs:comment>
+        <rdfs:label xml:lang="en">Improve Healthcare</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#ImproveMobility -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#ImproveMobility">
+        <dct:source>DGA 2.16</dct:source>
+        <rdfs:comment xml:lang="en">Purposes associated with improving traffic, public transport systems or costs for drivers</rdfs:comment>
+        <rdfs:label xml:lang="en">Improve Mobility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#Licence -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#Licence">
+        <dct:source>DGA 2.10</dct:source>
+        <rdfs:comment xml:lang="en">Document which states the conditions for usage of data</rdfs:comment>
+        <rdfs:label xml:lang="en">Licence</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/ns/odrl/2/Offer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#ModifiedData -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#ModifiedData">
+        <dct:source>DGA 5.3.a.ii</dct:source>
+        <rdfs:comment xml:lang="en">Data that is updated in relation to its original state</rdfs:comment>
+        <rdfs:label xml:lang="en">Modified Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#ProvideOfficialStatistics -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#ProvideOfficialStatistics">
+        <dct:source>DGA 2.16</dct:source>
+        <rdfs:comment xml:lang="en">Purposes associated with facilitating the development, production and dissemination of reliable official statistics</rdfs:comment>
+        <rdfs:label xml:lang="en">Provide Official Statistics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#ProvidePublicServices -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#ProvidePublicServices">
+        <dct:source>DGA 2.16</dct:source>
+        <rdfs:comment xml:lang="en">Purposes associated with improving the provision of public services, such as public safety, education or law enforcement</rdfs:comment>
+        <rdfs:label xml:lang="en">Provide Public Services</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#PublicPolicyMaking -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#PublicPolicyMaking">
+        <dct:source>DGA 2.16</dct:source>
+        <rdfs:comment xml:lang="en">Purposes associated with public policy making, such as the development of new laws</rdfs:comment>
+        <rdfs:label xml:lang="en">Public Policy Making</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#PublicSectorBody -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#PublicSectorBody">
+        <dct:source>DGA 2.17, 2.18</dct:source>
+        <rdfs:comment xml:lang="en">An entity or association of entities governed by public law formed by one or more State, regional or local authorities</rdfs:comment>
+        <rdfs:label xml:lang="en">Public Sector Body</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#RegisterOfDataIAltruismActivity -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#RegisterOfDataIAltruismActivity">
+        <dct:source>DGA 20</dct:source>
+        <rdfs:comment xml:lang="en">Document that logs the activity of the data altruism organisation</rdfs:comment>
+        <rdfs:label xml:lang="en">Register of Data Altruism Activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#RegisterOfDataIntermediationActivity -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#RegisterOfDataIntermediationActivity">
+        <dct:source>DGA 12.o</dct:source>
+        <rdfs:comment xml:lang="en">Document that logs the activity of the data intermediation service provider</rdfs:comment>
+        <rdfs:label xml:lang="en">Register of Data Intermediation Activity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#SafeguardIntellectualPropertyRightsOfThirdParties -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#SafeguardIntellectualPropertyRightsOfThirdParties">
+        <dct:source>DGA 3.1.c</dct:source>
+        <rdfs:comment xml:lang="en">Data held by public sector bodies can be reused if the intellectual property rights of third parties are safeguarded</rdfs:comment>
+        <rdfs:label xml:lang="en">Safeguard Intellectual Property Rights of Third Parties</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#SafeguardPersonalData -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#SafeguardPersonalData">
+        <dct:source>DGA 3.1.d</dct:source>
+        <rdfs:comment xml:lang="en">Data held by public sector bodies can be reused if the protection of personal data is safeguarded</rdfs:comment>
+        <rdfs:label xml:lang="en">Safeguard Personal Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#SingleInformationPoint -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#SingleInformationPoint">
+        <dct:source>DGA 8</dct:source>
+        <rdfs:comment xml:lang="en">An entity who is responsible for receiving and transmiting requests for the re-use of public data</rdfs:comment>
+        <rdfs:label xml:lang="en">Single Information Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#StatisticalConfidentiality -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#StatisticalConfidentiality">
+        <dct:source>DGA 3.1.b</dct:source>
+        <rdfs:comment xml:lang="en">Data held by public sector bodies can be reused on the grounds of statistical confidentiality</rdfs:comment>
+        <rdfs:label xml:lang="en">Statistical Confidentiality</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#TermsOfService -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#TermsOfService">
+        <dct:source>DGA 12.f</dct:source>
+        <rdfs:comment xml:lang="en">Information regarding the activities performed by a service</rdfs:comment>
+        <rdfs:label xml:lang="en">Terms of Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://anon/dgaterms#dpv:ResearchAndDevelopment -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#dpv:ResearchAndDevelopment">
+        <dct:source>DGA 2.16</dct:source>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/dpv#LegalEntity -->
+
+    <owl:Class rdf:about="https://w3id.org/dpv#LegalEntity"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://anon/dgaterms#connectedWith">
+        <rdfs:label xml:lang="en">connected with</rdfs:label>
+        <rdfs:comment xml:lang="en">Indicates a connection between entities who use a data intermediation service</rdfs:comment>
+        <dct:source>DGA 12.c</dct:source>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://anon/dgaterms#hasDataIntermediationServiceProviderType">
+        <rdfs:comment xml:lang="en">Indicates the type of data intermediation service provider</rdfs:comment>
+        <dct:source>DGA 11.6.f</dct:source>
+        <rdfs:label xml:lang="en">has data intermediation service provider type</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://anon/dgaterms#hasThirdCountryJurisdiction">
+        <rdfs:label xml:lang="en">has third country jurisdiction</rdfs:label>
+        <dct:source>DGA 12.n</dct:source>
+        <rdfs:comment xml:lang="en">Indicates applicability of third country jurisdiction</rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
