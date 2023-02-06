@@ -1,0 +1,36 @@
+Term,Label,Definition,Parent,RelatedTerms,Relation,Source
+DataUser,Data User,An entity who has access an the right to use personal or non-personal data for commercial or non-commercial purposes,"dpv:LegalEntity, dpv:NaturalPerson",,,DGA 2.9
+DataHolder,Data Holder,An entity who has the right to grant access to or to share certain personal data or non-personal data,"dpv:LegalEntity, dpv:NaturalPerson",,,DGA 2.8
+PublicSectorBody,Public Sector Body,"An entity or association of entities governed by public law formed by one or more State, regional or local authorities",dpv:LegalEntity,,,"DGA 2.17, 2.18"
+CompetentBody,CompetentBody,An entity designated by a public sector body to provide legal and technical support on the access and reuse of public sector data,dpv:LegalEntity,,,DGA 7
+SingleInformationPoint,Single Information Point,An entity who is responsible for receiving and transmiting requests for the re-use of public data,dpv:Entity,,,DGA 8
+DataIntermediationServiceProvider,Data Intermediation Service Provider,An entity who establishes commercial relationships for the data sharing between data subjects and data holders on the one hand and data users on the other,dpv:LegalEntity,,,DGA 2.11
+DataCooperativeServiceProvider,Data Cooperative Service Provider,"An entity constituted by data subjects, one-person undertakings or SMEs who provides data intermediation services and supports its members in the exercise of their data-related rights",DataIntermediationServiceProvider,,,"DGA 2.15, 10.c"
+DataIntermediationServiceProviderForDataHolder,Data Intermediation Service Provider for Data Holder,"An entity who makes data holders' data available for potential data users, including bilateral or multilateral exchanges of data and platforms and databases for the joint exploitation of data",DataIntermediationServiceProvider,,,DGA 10.a
+DataIntermediationServiceProviderForDataSubject,Data Intermediation Service Provider for Data Subject,An entity who makes data subjects' personal data available for potential data users,DataIntermediationServiceProvider,,,DGA 10.b
+DataAltruismOrganisation,Data Altruism Organisation,An non-profit organisation whom collects and shares data for altruistic purposes,dpv:NonProfitOrganisation,,,"DGA 2.16, 18"
+EuropeanDataInnovationBoard,European Data Innovation Board,An authority tasked with overseeing the activities of data intermediation service providers and data altruism organisations,dpv:SupraNationalAuthority,,,DGA 29
+Download,Download,"Copy data from one computer system to another over a network, e.g., over the internet ",dpv:Copy,,,"DGA 2.13, 2.20"
+Display,Display,Show data in an organised way so that it can be seen by the public,,odrl:display,rdfs:seeAlso,DGA 2.20
+AltruisticPurpose,Altruistic Purpose,"Purposes associated with the voluntary sharing of data for the general interest of the public, such as healthcare or combating climate change",dpv:Purpose,,,DGA 2.16
+ImproveHealthcare,Improve Healthcare,"Purposes associated with improving the public healthcare systems across the Member States, including improving personalised treatments and helping cure chronic diseases",AltruisticPurpose,,,DGA 2.16
+CombatClimateChange,CombatClimateChange,"Purposes associated with combating the causes and consequences of climate change, including reducing gas emissions and fighting emergencies such as floods or wildfires",AltruisticPurpose,,,DGA 2.16
+ImproveMobility,Improve Mobility,"Purposes associated with improving traffic, public transport systems or costs for drivers",AltruisticPurpose,,,DGA 2.16
+ProvideOfficialStatistics,Provide Official Statistics,"Purposes associated with facilitating the development, production and dissemination of reliable official statistics","AltruisticPurpose, dpv:ServiceProvision",,,DGA 2.16
+ProvidePublicServices,Provide Public Services,"Purposes associated with improving the provision of public services, such as public safety, education or law enforcement","AltruisticPurpose, dpv:ServiceProvision",,,DGA 2.16
+PublicPolicyMaking,Public Policy Making,"Purposes associated with public policy making, such as the development of new laws",AltruisticPurpose,,,DGA 2.16
+dpv:ResearchAndDevelopment,,,AltruisticPurpose,,,DGA 2.16
+Licence,Licence,Document which states the conditions for usage of data,dpv:OrganisationalMeasure,odrl:Offer,rdfs:seeAlso,DGA 2.10
+DataRequestProcedure,Data Request Procedure,Procedure to request data for reuse via single information point,dpv:OrganisationalMeasure,,,DGA 5.1
+DataExchangeMethod,Data Exchange Method,Methods to facilitate the exchange of data,dpv:TechnicalMeasure,,,DGA 12.e
+TermsOfService,Terms of Service,Information regarding the activities performed by a service,dpv:OrganisationalMeasure,,,DGA 12.f
+DataSubjectRightsManagement,Data Subject Rights Management,Methods to facilitate the exercising of data subjects' rights,dpv:DigitalRightsManagement,,,DGA 12.m
+ConsentAndPermissionManagement,Consent and Permission Management,Methods to obtain and withdraw consent or permission to process data,dpv:DigitalRightsManagement,,,DGA 12.n
+RegisterOfDataIntermediationActivity,Register of Data Intermediation Activity,Document that logs the activity of the data intermediation service provider,dpv:RecordsOfActivities,,,DGA 12.o
+RegisterOfDataIAltruismActivity,Register of Data Altruism Activity,Document that logs the activity of the data altruism organisation,dpv:RecordsOfActivities,,,DGA 20
+CommercialConfidentiality,Commercial Confidentiality,"Data held by public sector bodies can be reused on the grounds of commercial confidentiality, including business, professional and company secrets",dpv:Justification,,,DGA 3.1.a
+StatisticalConfidentiality,Statistical Confidentiality,Data held by public sector bodies can be reused on the grounds of statistical confidentiality,dpv:Justification,,,DGA 3.1.b
+SafeguardIntellectualPropertyRightsOfThirdParties,Safeguard Intellectual Property Rights of Third Parties,Data held by public sector bodies can be reused if the intellectual property rights of third parties are safeguarded,dpv:Justification,,,DGA 3.1.c
+SafeguardPersonalData,Safeguard Personal Data,Data held by public sector bodies can be reused if the protection of personal data is safeguarded,dpv:Justification,,,DGA 3.1.d
+ModifiedData,Modified Data,Data that is updated in relation to its original state,dpv:Data,,,DGA 5.3.a.ii
+AggregatedData,Aggregated Data,Data that resulted from the aggregation of several datum,dpv:Data,,,DGA 5.3.a.ii
