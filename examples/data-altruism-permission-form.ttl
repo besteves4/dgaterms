@@ -1,0 +1,29 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX ex: <http://example.com/>
+PREFIX : <http://anon/dgaterms#>
+
+ex:permissionRecord-1 a dpv:Permission ;
+    dpv:hasIdentifier <http://example.com/permissionRecord-1> ;
+    rdfs:comment "European data altruism form where data holder A allows the usage of their anonymised data for the altruistic purpose of providing official statistics"@en ;
+    :hasDataHolder ex:dataHolderA ;
+    dpv:isIndicatedBy ex:dataHolderA ;
+    dpv:isIndicatedAtTime "2022-12-15" ;
+    dpv:hasPersonalDataHandling [
+        dpv:hasPurpose [
+            a :ProvideOfficialStatistics ;
+            dpv:hasData dpv:AnonymisedData ;
+            dpv:hasProcessing dpv:Use, dpv:Store ;
+            dpv:hasDataAltruismOrganisation ex:companyA
+        ]
+    ] .
+
+ex:dataHolderA a :DataHolder ;
+    dpv:hasName "Data Holder A" ;
+    dpv:hasContact "mailto:dataholdera@email.com" .
+
+ex:companyA a :DataAltruismOrganisation ;
+    dpv:hasName "Company A" ;
+    dpv:hasContact "mailto:companya@email.com" ;
+    dpv:hasAddress "Madrid, Spain" .

@@ -1,0 +1,9 @@
+PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX : <http://anon/dgaterms#>
+
+SELECT DISTINCT ?Provider ?Name
+WHERE {
+    ?Provider a :DataIntermediationServiceProvider .
+    ?Provider dpv:hasName ?Name .
+    ?Provider :hasDataIntermediationServiceProviderType :DataCooperativeServiceProvider .
+}

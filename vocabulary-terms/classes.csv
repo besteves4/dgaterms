@@ -34,3 +34,9 @@ SafeguardIntellectualPropertyRightsOfThirdParties,Safeguard Intellectual Propert
 SafeguardPersonalData,Safeguard Personal Data,Data held by public sector bodies can be reused if the protection of personal data is safeguarded,dpv:Justification,,,DGA 3.1.d
 ModifiedData,Modified Data,Data that is updated in relation to its original state,dpv:Data,,,DGA 5.3.a.ii
 AggregatedData,Aggregated Data,Data that resulted from the aggregation of several datum,dpv:Data,,,DGA 5.3.a.ii
+RegisterOfPublicSectorBodyActivity,Register of Public Sector Body Activity,Document that logs the activity of the public sector body,dpv:RecordsOfActivities,,,DGA 5
+PublicRegister,Public Register,Document that contains a publicly available list of entities that perform a certain activity within a certain location or jurisdiction,dpv:OrganisationalMeasure,,,
+PublicRegisterOfDataIntermediationServiceProviders,Public Register of Data Intermediation Service Providers,Document that contains a publicly available list of data intermediation service providers,PublicRegister,,,DGA 11.10
+PublicRegisterOfDataAltruismOrganisations,Public Register of Data Altruism Organisations,Document that contains a publicly available list of data altruism organisations,PublicRegister,,,DGA 19.5
+DataIntermediationAuthority,Data Intermediation Authority,An authority tasked with overseeing the activity of data intermediation service providers and maintaining a public register of said entities,dpv:Authority,,,DGA 13
+DataAltruismAuthority,Data Altruism Authority,An authority tasked with overseeing the activity of data altruism organisations and maintaining a public register of said entities,dpv:Authority,,,DGA 23

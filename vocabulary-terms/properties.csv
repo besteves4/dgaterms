@@ -16,3 +16,8 @@ hasProcessingDate,has processing date,Indicates the date when an entity starts t
 connectedWith,connected with,Indicates a connection between entities who use a data intermediation service,,DataUser,dpv:LegalEntity,DGA 12.c
 conversionFormat,conversion format,The formats to which the data is allowed to be converted,dct:format,dpv:Data,,DGA 12.d
 hasThirdCountryJurisdiction,has third country jurisdiction,Indicates applicability of third country jurisdiction,dpv:hasJurisdiction,,dpv:Location,DGA 12.n
+hasPublicSectorBody,has public sector body,Indicates association with public sector body,,,PublicSectorBody,
+hasCompetentBody,has competent body,Indicates association with competent body,,,CompetentBody,
+hasDataUser,has data user,Indicates association with data user,,,DataUser,
+hasDataHolder,has data holder,Indicates association with data holder,,,DataHolder,
+hasDataAltruismOrganisation,has data altruism organisation,Indicates association with data altruism organisation,,,DataAltruismOrganisation,

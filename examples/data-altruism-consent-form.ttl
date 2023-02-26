@@ -1,0 +1,31 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dpv-pd: <https://w3id.org/dpv/dpv-pd#>
+PREFIX ex: <http://example.com/>
+PREFIX : <http://anon/dgaterms#>
+
+ex:consentRecord-1 a dpv:ConsentRecord ;
+    dpv:hasIdentifier <http://example.com/consentRecord-1> ;
+    rdfs:comment "European data altruism form where data subject Anne consents to the usage of their personal location data for the altruistic purpose of improving mobility"@en ;
+    dpv:hasDataSubject ex:Anne ; dpv:isIndicatedBy ex:Anne ;
+    dpv:isIndicatedAtTime "2022-12-14" ;
+    dpv:hasPersonalDataHandling [
+        dpv:hasPurpose [
+            a :ImproveMobility ;
+            dpv:hasLegalBasis dpv:Consent ;
+            dpv:hasPersonalData dpv-pd:Location ;
+            dpv:hasProcessing dpv:Use, dpv:Store ;
+            dpv:hasDataAltruismOrganisation ex:companyA
+        ]
+    ] .
+
+ex:Anne a dpv:DataSubject ;
+    dpv:hasName "Anne" ;
+    dpv:hasContact "mailto:anne@email.com" ;
+    dpv:hasAddress "Madrid, Spain" .
+
+ex:companyA a :DataAltruismOrganisation ;
+    dpv:hasName "Company A" ;
+    dpv:hasContact "mailto:companya@email.com" ;
+    dpv:hasAddress "Madrid, Spain" .

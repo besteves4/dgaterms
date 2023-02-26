@@ -140,6 +140,41 @@ xsd:date rdf:type rdfs:Datatype .
                            rdfs:label "has single information point"@en .
 
 
+###  http://anon/dgaterms#hasPublicSectorBody
+:hasPublicSectorBody rdf:type owl:ObjectProperty ;
+                           rdfs:range :PublicSectorBody ;
+                           rdfs:comment "Indicates association with public sector body"@en ;
+                           rdfs:label "has public sector body"@en .
+
+
+###  http://anon/dgaterms#hasCompetentBody
+:hasCompetentBody rdf:type owl:ObjectProperty ;
+                           rdfs:range :CompetentBody ;
+                           rdfs:comment "Indicates association with competent body"@en ;
+                           rdfs:label "has competent body"@en .
+
+          
+###  http://anon/dgaterms#hasDataUser
+:hasDataUser rdf:type owl:ObjectProperty ;
+                           rdfs:range :DataUser ;
+                           rdfs:comment "Indicates association with data user"@en ;
+                           rdfs:label "has data user"@en .~
+
+
+###  http://anon/dgaterms#hasDataHolder
+:hasDataHolder rdf:type owl:ObjectProperty ;
+                           rdfs:range :DataHolder ;
+                           rdfs:comment "Indicates association with data holder"@en ;
+                           rdfs:label "has data holder"@en .
+
+                          
+###  http://anon/dgaterms#hasDataAltruismOrganisation
+:hasDataAltruismOrganisation rdf:type owl:ObjectProperty ;
+                           rdfs:range :DataAltruismOrganisation ;
+                           rdfs:comment "Indicates association with data altruism organisation"@en ;
+                           rdfs:label "has data altruism organisation"@en .
+
+
 ###  http://anon/dgaterms#hasThirdCountryJurisdiction
 :hasThirdCountryJurisdiction rdf:type owl:ObjectProperty ;
                              rdfs:range dpv:Location .
@@ -205,140 +240,131 @@ dct:date rdf:type owl:DatatypeProperty .
 :DataUser rdf:type owl:Class;
   rdfs:label "Data User"@en;
   rdfs:comment "An entity who has access an the right to use personal or non-personal data for commercial or non-commercial purposes"@en;
-
   rdfs:subclassOf dpv:LegalEntity, dpv:NaturalPerson;
   dct:source "DGA 2.9".
 
 :DataHolder rdf:type owl:Class;
   rdfs:label "Data Holder"@en;
   rdfs:comment "An entity who has the right to grant access to or to share certain personal data or non-personal data"@en;
-
   rdfs:subclassOf dpv:LegalEntity, dpv:NaturalPerson;
   dct:source "DGA 2.8".
 
 :PublicSectorBody rdf:type owl:Class;
   rdfs:label "Public Sector Body"@en;
   rdfs:comment "An entity or association of entities governed by public law formed by one or more State, regional or local authorities"@en;
-
   rdfs:subclassOf dpv:LegalEntity;
   dct:source "DGA 2.17, 2.18".
 
 :CompetentBody rdf:type owl:Class;
   rdfs:label "CompetentBody"@en;
   rdfs:comment "An entity designated by a public sector body to provide legal and technical support on the access and reuse of public sector data"@en;
-
   rdfs:subclassOf dpv:LegalEntity;
   dct:source "DGA 7".
 
 :SingleInformationPoint rdf:type owl:Class;
   rdfs:label "Single Information Point"@en;
   rdfs:comment "An entity who is responsible for receiving and transmiting requests for the re-use of public data"@en;
-
   rdfs:subclassOf dpv:Entity;
   dct:source "DGA 8".
 
 :DataIntermediationServiceProvider rdf:type owl:Class;
   rdfs:label "Data Intermediation Service Provider"@en;
   rdfs:comment "An entity who establishes commercial relationships for the data sharing between data subjects and data holders on the one hand and data users on the other"@en;
-
   rdfs:subclassOf dpv:LegalEntity;
   dct:source "DGA 2.11".
 
 :DataCooperativeServiceProvider rdf:type owl:Class;
   rdfs:label "Data Cooperative Service Provider"@en;
   rdfs:comment "An entity constituted by data subjects, one-person undertakings or SMEs who provides data intermediation services and supports its members in the exercise of their data-related rights"@en;
-
   rdfs:subclassOf :DataIntermediationServiceProvider;
   dct:source "DGA 2.15, 10.c".
 
 :DataIntermediationServiceProviderForDataHolder rdf:type owl:Class;
   rdfs:label "Data Intermediation Service Provider for Data Holder"@en;
   rdfs:comment "An entity who makes data holders' data available for potential data users, including bilateral or multilateral exchanges of data and platforms and databases for the joint exploitation of data"@en;
-
   rdfs:subclassOf :DataIntermediationServiceProvider;
   dct:source "DGA 10.a".
 
 :DataIntermediationServiceProviderForDataSubject rdf:type owl:Class;
   rdfs:label "Data Intermediation Service Provider for Data Subject"@en;
   rdfs:comment "An entity who makes data subjects' personal data available for potential data users"@en;
-
   rdfs:subclassOf :DataIntermediationServiceProvider;
   dct:source "DGA 10.b".
 
 :DataAltruismOrganisation rdf:type owl:Class;
   rdfs:label "Data Altruism Organisation"@en;
   rdfs:comment "An non-profit organisation whom collects and shares data for altruistic purposes"@en;
-
   rdfs:subclassOf dpv:NonProfitOrganisation;
   dct:source "DGA 2.16, 18".
 
 :EuropeanDataInnovationBoard rdf:type owl:Class;
   rdfs:label "European Data Innovation Board"@en;
   rdfs:comment "An authority tasked with overseeing the activities of data intermediation service providers and data altruism organisations"@en;
-
   rdfs:subclassOf dpv:SupraNationalAuthority;
   dct:source "DGA 29".
+
+:DataIntermediationAuthority rdf:type owl:Class;
+  rdfs:label "Data Intermediation Authority"@en;
+  rdfs:comment "An authority tasked with overseeing the activity of data intermediation service providers and maintaining a public register of said entities"@en;
+  rdfs:subclassOf dpv:Authority;
+  dct:source "DGA 13".
+
+:DataAltruismAuthority rdf:type owl:Class;
+  rdfs:label "Data Altruism Authority"@en;
+  rdfs:comment "An authority tasked with overseeing the activity of data altruism organisations and maintaining a public register of said entities"@en;
+  rdfs:subclassOf dpv:Authority;
+  dct:source "DGA 23".
 
 :Download rdf:type owl:Class;
   rdfs:label "Download"@en;
   rdfs:comment "Copy data from one computer system to another over a network, e.g., over the internet"@en;
-
   rdfs:subclassOf dpv:Copy;
   dct:source "DGA 2.13, 2.20".
 
 :Display rdf:type owl:Class;
-
   rdfs:comment "Show data in an organised way so that it can be seen by the public"@en;
   rdfs:seeAlso odrl:display;
-
   dct:source "DGA 2.20".
 
 :AltruisticPurpose rdf:type owl:Class;
   rdfs:label "Altruistic Purpose"@en;
   rdfs:comment "Purposes associated with the voluntary sharing of data for the general interest of the public, such as healthcare or combating climate change"@en;
-
   rdfs:subclassOf dpv:Purpose;
   dct:source "DGA 2.16".
 
 :ImproveHealthcare rdf:type owl:Class;
   rdfs:label "Improve Healthcare"@en;
   rdfs:comment "Purposes associated with improving the public healthcare systems across the Member States, including improving personalised treatments and helping cure chronic diseases"@en;
-
   rdfs:subclassOf :AltruisticPurpose;
   dct:source "DGA 2.16".
 
 :CombatClimateChange rdf:type owl:Class;
   rdfs:label "CombatClimateChange"@en;
   rdfs:comment "Purposes associated with combating the causes and consequences of climate change, including reducing gas emissions and fighting emergencies such as floods or wildfires"@en;
-
   rdfs:subclassOf :AltruisticPurpose;
   dct:source "DGA 2.16".
 
 :ImproveMobility rdf:type owl:Class;
   rdfs:label "Improve Mobility"@en;
   rdfs:comment "Purposes associated with improving traffic, public transport systems or costs for drivers"@en;
-
   rdfs:subclassOf :AltruisticPurpose;
   dct:source "DGA 2.16".
 
 :ProvideOfficialStatistics rdf:type owl:Class;
   rdfs:label "Provide Official Statistics"@en;
   rdfs:comment "Purposes associated with facilitating the development, production and dissemination of reliable official statistics"@en;
-
   rdfs:subclassOf :AltruisticPurpose, dpv:ServiceProvision;
   dct:source "DGA 2.16".
 
 :ProvidePublicServices rdf:type owl:Class;
   rdfs:label "Provide Public Services"@en;
   rdfs:comment "Purposes associated with improving the provision of public services, such as public safety, education or law enforcement"@en;
-
   rdfs:subclassOf :AltruisticPurpose, dpv:ServiceProvision;
   dct:source "DGA 2.16".
 
 :PublicPolicyMaking rdf:type owl:Class;
   rdfs:label "Public Policy Making"@en;
   rdfs:comment "Purposes associated with public policy making, such as the development of new laws"@en;
-
   rdfs:subclassOf :AltruisticPurpose;
   dct:source "DGA 2.16".
 
@@ -356,42 +382,36 @@ dct:date rdf:type owl:DatatypeProperty .
 :DataRequestProcedure rdf:type owl:Class;
   rdfs:label "Data Request Procedure"@en;
   rdfs:comment "Procedure to request data for reuse via single information point"@en;
-
   rdfs:subclassOf dpv:OrganisationalMeasure;
   dct:source "DGA 5.1".
 
 :DataExchangeMethod rdf:type owl:Class;
   rdfs:label "Data Exchange Method"@en;
   rdfs:comment "Methods to facilitate the exchange of data"@en;
-
   rdfs:subclassOf dpv:TechnicalMeasure;
   dct:source "DGA 12.e".
 
 :TermsOfService rdf:type owl:Class;
   rdfs:label "Terms of Service"@en;
   rdfs:comment "Information regarding the activities performed by a service"@en;
-
   rdfs:subclassOf dpv:OrganisationalMeasure;
   dct:source "DGA 12.f".
 
 :DataSubjectRightsManagement rdf:type owl:Class;
   rdfs:label "Data Subject Rights Management"@en;
   rdfs:comment "Methods to facilitate the exercising of data subjects' rights"@en;
-
   rdfs:subclassOf dpv:DigitalRightsManagement;
   dct:source "DGA 12.m".
 
 :ConsentAndPermissionManagement rdf:type owl:Class;
   rdfs:label "Consent and Permission Management"@en;
   rdfs:comment "Methods to obtain and withdraw consent or permission to process data"@en;
-
   rdfs:subclassOf dpv:DigitalRightsManagement;
   dct:source "DGA 12.n".
 
 :RegisterOfDataIntermediationActivity rdf:type owl:Class;
   rdfs:label "Register of Data Intermediation Activity"@en;
   rdfs:comment "Document that logs the activity of the data intermediation service provider"@en;
-
   rdfs:subclassOf dpv:RecordsOfActivities;
   dct:source "DGA 12.o".
 
@@ -400,6 +420,29 @@ dct:date rdf:type owl:DatatypeProperty .
   rdfs:comment "Document that logs the activity of the data altruism organisation"@en;
   rdfs:subclassOf dpv:RecordsOfActivities;
   dct:source "DGA 20".
+
+:RegisterOfPublicSectorBodyActivity rdf:type owl:Class;
+  rdfs:label "Register of Public Sector Body Activity"@en;
+  rdfs:comment "Document that logs the activity of the public sector body"@en;
+  rdfs:subclassOf dpv:RecordsOfActivities;
+  dct:source "DGA 5".
+
+:PublicRegister rdf:type owl:Class;
+  rdfs:label "Public Register"@en;
+  rdfs:comment "Document that contains a publicly available list of entities that perform a certain activity within a certain location or jurisdiction"@en;
+  rdfs:subclassOf dpv:OrganisationalMeasure.
+
+:PublicRegisterOfDataIntermediationServiceProviders rdf:type owl:Class;
+  rdfs:label "Public Register of Data Intermediation Service Providers"@en;
+  rdfs:comment "Document that contains a publicly available list of data intermediation service providers"@en;
+  rdfs:subclassOf :PublicRegister;
+  dct:source "DGA 11.10".
+
+:PublicRegisterOfDataAltruismOrganisations rdf:type owl:Class;
+  rdfs:label "Public Register of Data Altruism Organisations"@en;
+  rdfs:comment "Document that contains a publicly available list of data altruism organisations"@en;
+  rdfs:subclassOf :PublicRegister;
+  dct:source "DGA 19.5".
 
 :CommercialConfidentiality rdf:type owl:Class;
   rdfs:label "Commercial Confidentiality"@en;

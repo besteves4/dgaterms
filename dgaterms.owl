@@ -219,7 +219,57 @@
         <rdfs:comment xml:lang="en">Indicates the responsible single information point entity</rdfs:comment>
         <rdfs:label xml:lang="en">has single information point</rdfs:label>
     </owl:ObjectProperty>
+
+
+
+    <!-- http://anon/dgaterms#hasPublicSectorBody -->
+
+    <owl:ObjectProperty rdf:about="http://anon/dgaterms#hasPublicSectorBody">
+        <rdfs:range rdf:resource="http://anon/dgaterms#PublicSectorBody"/>
+        <rdfs:comment xml:lang="en">Indicates association with public sector body</rdfs:comment>
+        <rdfs:label xml:lang="en">has public sector body</rdfs:label>
+    </owl:ObjectProperty>
     
+
+
+    <!-- http://anon/dgaterms#hasCompetentBody -->
+
+    <owl:ObjectProperty rdf:about="http://anon/dgaterms#hasCompetentBody">
+        <rdfs:range rdf:resource="http://anon/dgaterms#CompetentBody"/>
+        <rdfs:comment xml:lang="en">Indicates association with competent body</rdfs:comment>
+        <rdfs:label xml:lang="en">has competent body</rdfs:label>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://anon/dgaterms#hasDataUser -->
+
+    <owl:ObjectProperty rdf:about="http://anon/dgaterms#hasDataUser">
+        <rdfs:range rdf:resource="http://anon/dgaterms#DataUser"/>
+        <rdfs:comment xml:lang="en">Indicates association with data user</rdfs:comment>
+        <rdfs:label xml:lang="en">has data user</rdfs:label>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://anon/dgaterms#hasDataHolder -->
+
+    <owl:ObjectProperty rdf:about="http://anon/dgaterms#hasDataHolder">
+        <rdfs:range rdf:resource="http://anon/dgaterms#DataHolder"/>
+        <rdfs:comment xml:lang="en">Indicates association with data holder</rdfs:comment>
+        <rdfs:label xml:lang="en">has data holder</rdfs:label>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://anon/dgaterms#hasDataAltruismOrganisation -->
+
+    <owl:ObjectProperty rdf:about="http://anon/dgaterms#hasDataAltruismOrganisation">
+        <rdfs:range rdf:resource="http://anon/dgaterms#DataAltruismOrganisation"/>
+        <rdfs:comment xml:lang="en">Indicates association with data altruism organisation</rdfs:comment>
+        <rdfs:label xml:lang="en">has data altruism organisation</rdfs:label>
+    </owl:ObjectProperty>
+
 
 
     <!-- http://anon/dgaterms#hasThirdCountryJurisdiction -->
@@ -501,6 +551,26 @@
     
 
 
+    <!-- http://anon/dgaterms#DataIntermediationAuthority -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#DataIntermediationAuthority">
+        <dct:source>DGA 13</dct:source>
+        <rdfs:comment xml:lang="en">An authority tasked with overseeing the activity of data intermediation service providers and maintaining a public register of said entities</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Intermediation Authority</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://anon/dgaterms#DataAltruismAuthority -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#DataAltruismAuthority">
+        <dct:source>DGA 23</dct:source>
+        <rdfs:comment xml:lang="en">An authority tasked with overseeing the activity of data altruism organisations and maintaining a public register of said entities</rdfs:comment>
+        <rdfs:label xml:lang="en">Data Altruism Authority</rdfs:label>
+    </owl:Class>
+
+
+
     <!-- http://anon/dgaterms#ImproveHealthcare -->
 
     <owl:Class rdf:about="http://anon/dgaterms#ImproveHealthcare">
@@ -599,7 +669,46 @@
         <rdfs:comment xml:lang="en">Document that logs the activity of the data intermediation service provider</rdfs:comment>
         <rdfs:label xml:lang="en">Register of Data Intermediation Activity</rdfs:label>
     </owl:Class>
-    
+
+
+
+    <!-- http://anon/dgaterms#RegisterOfPublicSectorBodyActivity -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#RegisterOfPublicSectorBodyActivity">
+        <dct:source>DGA 5</dct:source>
+        <rdfs:comment xml:lang="en">Document that logs the activity of the public sector body</rdfs:comment>
+        <rdfs:label xml:lang="en">Register of Public Sector Body Activity</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://anon/dgaterms#PublicRegister -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#PublicRegister">
+        <rdfs:comment xml:lang="en">Document that contains a publicly available list of entities that perform a certain activity within a certain location or jurisdiction</rdfs:comment>
+        <rdfs:label xml:lang="en">Public Register</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://anon/dgaterms#PublicRegisterOfDataIntermediationServiceProviders -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#PublicRegisterOfDataIntermediationServiceProviders">
+        <dct:source>DGA 11.10</dct:source>
+        <rdfs:comment xml:lang="en">Document that contains a publicly available list of data intermediation service providers</rdfs:comment>
+        <rdfs:label xml:lang="en">Public Register of Data Intermediation Service Providers</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- http://anon/dgaterms#PublicRegisterOfDataAltruismOrganisations -->
+
+    <owl:Class rdf:about="http://anon/dgaterms#PublicRegisterOfDataAltruismOrganisations">
+        <dct:source>DGA 19.5</dct:source>
+        <rdfs:comment xml:lang="en">Document that contains a publicly available list of data altruism organisations</rdfs:comment>
+        <rdfs:label xml:lang="en">Public Register of Data Altruism Organisations</rdfs:label>
+    </owl:Class>
+
 
 
     <!-- http://anon/dgaterms#SafeguardIntellectualPropertyRightsOfThirdParties -->

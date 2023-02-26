@@ -1,0 +1,28 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://example.com/>
+PREFIX : <http://anon/dgaterms#>
+
+ex:policy1 a odrl:Offer ;
+    odrl:uid <http://example.com/policy1> ;
+    rdfs:comment "Policy set by the a PublicSectorBody, http://example.com/publicsectorbody1, that permits the use of the target dataset http//example.com/publicsectordata1 until the end of the year 2023."@en ;
+    odrl:permission [
+        odrl:target ex:publicsectordata1 ;
+        odrl:assigner ex:publicsectorbody1 ;
+        odrl:action odrl:use ;
+        odrl:constraint [
+            odrl:leftOperand odrl:dateTime ;
+            odrl:operator odrl:lteq ;
+            odrl:rightOperand "2023-12-31"^^xsd:date
+        ]
+    ] .
+
+ex:publicsectordata1 a :AggregatedData ;
+    rdfs:label "Example of aggregated data that follows under DGA's Article 3." .
+
+ex:publicsectorbody1 a :PublicSectorBody ;
+    dpv:hasName "Public Sector Body 1" ;
+    dpv:hasContact "mailto:publicsectorbody1@email.com" .
