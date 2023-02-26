@@ -18,7 +18,7 @@ as the usage of such technologies promotes machine readability and interoperabil
 
 The repository contains the following work:
 
-- [`./doc`](./DUO) folder contains the HTML documentation generated for the developed vocabulary
+- [`./doc`](./doc) folder contains the HTML documentation generated for the developed vocabulary
 - [`./vocabulary-terms`](./vocabulary-terms) contains two spreadsheets with the vocabulary's classes and properties
 - [`./examples`](./examples) contains a list of RDF examples that use DGAterms to specify ODRL policies, registries of activities, SPARQL queries and more
 
