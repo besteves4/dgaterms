@@ -12,8 +12,6 @@ In particular, in order to address DGA's new requirements, this work investigate
 
 as the usage of such technologies promotes machine readability and interoperability. In addition, the use of open semantic vocabularies eases the comparison of data-sharing policies across different use cases and thereby accelerates the development and sharing of best practices for the European altruistic and trusted data intermediary sectors.
 
-This work is under review at the [16th International Conference on Computers, Privacy & Data Protection](https://www.cpdpconferences.org/).
-
 ![DGAterms](./doc/figure.png "DGAterms")
 
 ## Repository Contents
@@ -25,5 +23,8 @@ The repository contains the following work:
 - [`./examples`](./examples) contains a list of RDF examples that use DGAterms to specify ODRL policies, registries of activities, SPARQL queries and more
 
 -----------------------
+
+This work is under review at the [16th International Conference on Computers, Privacy & Data Protection](https://www.cpdpconferences.org/).
+
 Work developed by:
 Anonymous
