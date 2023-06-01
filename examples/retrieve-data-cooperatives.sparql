@@ -1,9 +1,8 @@
 PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX : <http://anon/dgaterms#>
 
-SELECT DISTINCT ?Provider ?Name
-WHERE {
-    ?Provider a :DataIntermediationServiceProvider .
+SELECT DISTINCT ?Provider ?Name ?Web WHERE {
+    ?Provider a :DataCooperative .
     ?Provider dpv:hasName ?Name .
-    ?Provider :hasDataIntermediationServiceProviderType :DataCooperativeServiceProvider .
-}
+    ?Provider dcat:landingPage ?Web . }

@@ -1,23 +1,10 @@
 Term,Label,Definition,Parent,domain,range,Source
-hasFee,has fee,Indicates the fee charged by an entity to provide a service,,dpv:LegalEntity,xsd:decimal,DGA 2.10
-isFreeOfCharge,is free of charge,Indicates if the service provided by an entity is free of charge,,dpv:LegalEntity,xsd:boolean,DGA 2.10
-hasSingleInformationPoint,has single information point,Indicates the responsible single information point entity,,PublicSectorBody,SingleInformationPoint,
-hasLegalStatus,has legal status,Indicates the legal status of an entity,,dpv:LegalEntity,,DGA 11.6.b
-hasForm,has form,Indicates the form of an entity,,dpv:LegalEntity,,DGA 11.6.b
-hasOwnershipStructure,has ownership structure,Indicates the ownership structure of an entity,,dpv:LegalEntity,,DGA 11.6.b
-hasSubsidiary,has subsidiary,Indicates a subsidiary of an entity,,dpv:LegalEntity,,DGA 11.6.b
-hasRegistrationNumber,has registration number,Indicates the registration number of an entity,,dpv:LegalEntity,,DGA 11.6.b
-hasStatute,has statute,Indicates the statute of the entity,,dpv:LegalEntity,,DGA 19.4.c
-hasSourceOfIncome,has source of income,Indicates sources of income of the entity,,dpv:LegalEntity,,DGA 19.4.d
-hasSourceOfRevenue,has source of revenue,Indicates sources of revenue of the entity,,dpv:LegalEntity,,DGA 20.2.e
-hasDataIntermediationServiceProviderType,has data intermediation service provider type,Indicates the type of data intermediation service provider ,,,,DGA 11.6.f
-hasActivityStartingDate,has activity starting date,Indicates the date when an entity starts its activity,dct:date,dpv:LegalEntity,xsd:date,DGA 11.6.g
-hasProcessingDate,has processing date,Indicates the date when an entity starts to process data,dct:date,,xsd:date,DGA 20.1.b
-connectedWith,connected with,Indicates a connection between entities who use a data intermediation service,,DataUser,dpv:LegalEntity,DGA 12.c
-conversionFormat,conversion format,The formats to which the data is allowed to be converted,dct:format,dpv:Data,,DGA 12.d
+hasFee,has fee,Indicates the fee charged by an entity to provide a service,,dpv:LegalEntity,,DGA 2.10
+hasSingleInformationPoint,has single information point,Indicates the responsible single information point provider,,PublicSectorBody,SingleInformationPointProvider,
 hasThirdCountryJurisdiction,has third country jurisdiction,Indicates applicability of third country jurisdiction,dpv:hasJurisdiction,,dpv:Location,DGA 12.n
-hasPublicSectorBody,has public sector body,Indicates association with public sector body,,,PublicSectorBody,
-hasCompetentBody,has competent body,Indicates association with competent body,,,CompetentBody,
+hasCompetentBody,has competent body,Indicates association with competent body,,PublicSectorBody,DataReuseCompetentBody,
 hasDataUser,has data user,Indicates association with data user,,,DataUser,
 hasDataHolder,has data holder,Indicates association with data holder,,,DataHolder,
 hasDataAltruismOrganisation,has data altruism organisation,Indicates association with data altruism organisation,,,DataAltruismOrganisation,
+hasDataIntermediationServiceProvider,has data intermediation service provider,Indicates association with data intermediation service provider,,RegisterOfDataIntermediationServiceProviders,DataIntermediationServiceProvider,
+hasActivityLogs,has activity logs,Indicates associtation to an entity's activity logs,,RegisterOfDataIAltruismActivity,AltruismActivityLog,

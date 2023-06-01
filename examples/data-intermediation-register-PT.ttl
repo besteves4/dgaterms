@@ -1,32 +1,29 @@
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX dpv-pd: <https://w3id.org/dpv/dpv-pd#>
+PREFIX dpv-gdpr: <https://w3id.org/dpv/dpv-gdpr#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX ex: <http://example.com/>
 PREFIX : <http://anon/dgaterms#>
 
-ex:publicregistry_DI_PT a :PublicRegisterOfDataIntermediationServiceProviders ;
+ex:publicregistry_DI_PT a :RegisterOfDataIntermediationServiceProviders ;
     dct:description "Public register of intermediaries working in PT" ;
-    dct:created "2023-12-15"^^xsd:date ;
+    dct:created "2023-12-15"^^xsd:date ; 
+    dct:modified "2023-12-23"^^xsd:date ;
     dct:publisher ex:nationalauthority_PT ;
-    :hasDataIntermediationServiceProvider ex:DISP_1 .
+    :hasDataIntermediationServiceProvider ex:DISP_Y .
 
 ex:nationalauthority_PT a :DataIntermediationAuthority ;
     dpv:hasName "Data Intermediation Authority of Portugal" ;
     dpv:hasContact "mailto:nationalauthority_PT@email.com" ;
     dpv:hasJurisdiction "PT" .
 
-ex:DISP_1 a :DataIntermediationServiceProvider ;
-    dpv:hasName "Data Intermediation Service Provider 1" ;
-    dct:description "Provider of anonymised geolocation data" ;
-    :hasDataIntermediationServiceProviderType :DataCooperativeServiceProvider ;
-    :hasLegalStatus ex:legalStatusA ;
-    :hasForm ex:formA ;
-    :hasOwnershipStructure ex:structureA ;
-    :hasSubsidiary ex:subsidiaryA ;
-    :hasRegistrationNumber "125689"^^xsd:integer ;
+ex:DISP_Y a :DataCooperative ;
+    dpv:hasName "Data Cooperative Y" ; 
     dpv:hasAddress "Lisboa, Portugal" ;
-    dcat:landingPage <http://example.com/DISP1> ;
-    dct:issued "2023-12-23"^^xsd:date ;
-    :hasActivityStartingDate "2024-01-01"^^xsd:date .
+    dct:description "Provider of anonymised geolocation data" ;
+    dcat:landingPage <http://cooperativeA.com/> ;
+    dct:date "2023-12-23"^^xsd:date .
