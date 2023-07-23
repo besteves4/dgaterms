@@ -25,7 +25,10 @@ The repository contains the following work:
 
 This work was accepted to be presented at the Research & Innovation Track of the [19th International Conference on Semantic Systems](https://2023-eu.semantics.cc/).
 
-Work developed by:
+**Work developed by:**
+
 Beatriz Esteves, Víctor Rodríguez-Doncel: Ontology Engineering Group, Universidad Politécnica de Madrid, Spain
+
 Harshvardhan J. Pandit: ADAPT Centre, Dublin City University, Ireland
+
 Dave Lewis: ADAPT Centre, Trinity College Dublin, Ireland
