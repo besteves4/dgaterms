@@ -6,7 +6,7 @@ In particular, in order to address DGA's new requirements, this work investigate
 
 (1) generate machine-readable policies for the reuse of public data, 
 
-(2) specify data altruism consent terms and 
+(2) specify data altruism consent terms, and 
 
 (3) create uniform registries of data altruism organisations and intermediation services' providers 
 
@@ -23,7 +23,9 @@ The repository contains the following work:
 
 -----------------------
 
-This work is under review at the [19th International Conference on Semantic Systems](https://2023-eu.semantics.cc/).
+This work was accepted to be presented at the Research & Innovation Track of the [19th International Conference on Semantic Systems](https://2023-eu.semantics.cc/).
 
 Work developed by:
-Anonymous
+Beatriz Esteves, Víctor Rodríguez-Doncel: Ontology Engineering Group, Universidad Politécnica de Madrid, Spain
+Harshvardhan J. Pandit: ADAPT Centre, Dublin City University, Ireland
+Dave Lewis: ADAPT Centre, Trinity College Dublin, Ireland
