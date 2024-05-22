@@ -18,6 +18,7 @@ as the usage of such technologies promotes machine readability and interoperabil
 
 The repository contains the following work:
 
+- [`./docs`](./docs) contains the vocabulary HTML documentation and TTL serialisation
 - [`./vocabulary-terms`](./vocabulary-terms) contains two spreadsheets with the vocabulary's classes and properties
 - [`./examples`](./examples) contains a list of RDF examples that use DGAterms to specify ODRL policies, registers of activities, SPARQL queries and more
 
