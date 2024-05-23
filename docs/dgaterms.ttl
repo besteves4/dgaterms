@@ -1,766 +1,787 @@
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix dga: <http://anon/dgaterms#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dgaterms: <https://w3id.org/dgaterms#> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix tech: <https://w3id.org/dpv/dpv-tech#> .
+@prefix tech: <https://w3id.org/dpv/tech#> .
 
-dga:A12-e a rdfs:Class ;
+# ---------------- Ontology Metadata ------------------ #
+
+<https://w3id.org/dgaterms> a owl:Ontology ;
+	dcterms:title "DGAterms - A vocabulary to describe information flows in the Data Governance Act"@en ;
+	vann:preferredNamespacePrefix "dgaterms" ;
+    vann:preferredNamespaceUri "https://w3id.org/dgaterms#" ;
+	rdfs:label "DGAterms - A vocabulary to describe information flows in the Data Governance Act"@en ;
+	owl:versionInfo "0.1"^^xsd:decimal ;
+    owl:versionIRI <https://w3id.org/dgaterms/0.1> ;
+	dcterms:created "2023-02-06"^^xsd:date ;
+    dcterms:modified "2023-06-27"^^xsd:date ;
+    dcterms:issued "2023-06-27"^^xsd:date ;
+	dcterms:creator "Beatriz Esteves", "Harshvardhan J. Pandit", "Víctor Rodríguez-Doncel", "Dave Lewis" ;
+    dcterms:publisher "Beatriz Esteves" ;
+    dcterms:abstract "In order to address DGA's new requirements, this work investigates how to apply Semantic Web vocabularies, such as the W3C's Data Privacy Vocabulary (DPV), Open Digital Rights Language (ODRL) or Data Catalog Vocabulary (DCAT), to (1) generate machine-readable policies for the reuse of public data, (2) specify data altruism consent terms, and (3) create uniform registries of data altruism organisations and intermediation services' providers, as the usage of such technologies promotes machine readability and interoperability. In addition, the use of open semantic vocabularies eases the comparison of data-sharing policies across different use cases and thereby accelerates the development and sharing of best practices for the European altruistic and trusted data intermediary sectors."@en ;
+    dcterms:description "In order to address DGA's new requirements, this work investigates how to apply Semantic Web vocabularies, such as the W3C's Data Privacy Vocabulary (DPV), Open Digital Rights Language (ODRL) or Data Catalog Vocabulary (DCAT), to (1) generate machine-readable policies for the reuse of public data, (2) specify data altruism consent terms, and (3) create uniform registries of data altruism organisations and intermediation services' providers, as the usage of such technologies promotes machine readability and interoperability. In addition, the use of open semantic vocabularies eases the comparison of data-sharing policies across different use cases and thereby accelerates the development and sharing of best practices for the European altruistic and trusted data intermediary sectors."@en ;
+    rdfs:comment "This is the Turtle serialisation for DGAterms."@en ;
+    dcterms:bibliographicCitation "Cite this vocabulary as: Esteves, B., Rodríguez-Doncel, V., Pandit, H. J., & Lewis, D. (2023). DGAterms - A vocabulary to describe information flows in the Data Governance Act (DGA) (Version 0.1). Zenodo. https://doi.org/10.5281/zenodo.10894158"@en ;
+    bibo:doi "10.5281/zenodo.10894158"@en ;
+	foaf:logo <https://github.com/besteves4/dgaterms/blob/main/information-flows.png> ;
+	sw:term_status "stable"@en ;
+    dcterms:source <https://w3id.org/dpv>, <http://www.w3.org/ns/odrl/2/> ;
+    dcterms:license <https://dalicc.net/licenselibrary/CC-BY-4.0> .
+
+# ---------------- Concepts ------------------ #
+
+dgaterms:A12-e a rdfs:Class ;
     rdfs:label "Art 12(e) Data Exchange Approval" ;
-    dct:source "DGA 12.e" ;
+    dcterms:source "DGA 12.e" ;
     rdfs:subClassOf dpv:LegalBasis ;
     skos:definition "Explicit request or approval of the data subject or data holder to utilise additional specific tools for the purposes of facilitating exchange of data" .
 
-dga:A2-6 a rdfs:Class ;
+dgaterms:A2-6 a rdfs:Class ;
     rdfs:label "Art 2(6) Permission" ;
-    dct:source "DGA 2.6" ;
+    dcterms:source "DGA 2.6" ;
     rdfs:subClassOf dpv:NonPersonalDataLegalBasis ;
     skos:definition "The legal basis justfiying processing of non-personal data based on the permission of an entity" .
 
-dga:A31-2 a rdfs:Class ;
+dgaterms:A31-2 a rdfs:Class ;
     rdfs:label "Art 31(2) Data Transfer International Agreement" ;
-    dct:source "DGA 31.2" ;
+    dcterms:source "DGA 31.2" ;
     rdfs:subClassOf dpv:DataTransferLegalBasis ;
     skos:definition "Data Transfer International Agreement" .
 
-dga:A31-3 a rdfs:Class ;
+dgaterms:A31-3 a rdfs:Class ;
     rdfs:label "Art 31(3) Data Transfer Third Country Judgement" ;
-    dct:source "DGA 31.3" ;
+    dcterms:source "DGA 31.3" ;
     rdfs:subClassOf dpv:DataTransferLegalBasis ;
     skos:definition "Data Transfer Third Country Judgement" .
 
-dga:A5-11 a rdfs:Class ;
+dgaterms:A5-11 a rdfs:Class ;
     rdfs:label "Art 5(11) Model Contractual Clauses" ;
-    dct:source "DGA 5.11" ;
+    dcterms:source "DGA 5.11" ;
     rdfs:subClassOf dpv:DataTransferLegalBasis ;
     skos:definition "Model Contractual Clauses" .
 
-dga:A5-12 a rdfs:Class ;
+dgaterms:A5-12 a rdfs:Class ;
     rdfs:label "Art 5(12) Adequacy Decision" ;
-    dct:source "DGA 5.12" ;
+    dcterms:source "DGA 5.12" ;
     rdfs:subClassOf dpv:DataTransferLegalBasis ;
     skos:definition "Adequacy Decision" .
 
-dga:A5-9 a rdfs:Class ;
+dgaterms:A5-9 a rdfs:Class ;
     rdfs:label "Art 5(9) Permission for Transfer" ;
-    dct:source "DGA 5.9" ;
+    dcterms:source "DGA 5.9" ;
     rdfs:subClassOf dpv:DataTransferLegalBasis ;
     skos:definition "The legal basis justfiying processing of non-personal data based on the permission of an entity to transfer data" .
 
-dga:Aggregate a rdfs:Class ;
+dgaterms:Aggregate a rdfs:Class ;
     rdfs:label "Aggregate" ;
     rdfs:subClassOf dpv:Processing ;
     skos:definition "Join data from multiple sources" .
 
-dga:CharityOrganisation a rdfs:Class ;
+dgaterms:CharityOrganisation a rdfs:Class ;
     rdfs:label "Charity Organisation" ;
     rdfs:subClassOf dpv:LegalEntity ;
     skos:definition "An organization that supports a cause by fundraising or through donations and charity" .
 
-dga:CombatClimateChange a rdfs:Class ;
+dgaterms:CombatClimateChange a rdfs:Class ;
     rdfs:label "Combat Climate Change" ;
-    dct:source "DGA 2.16" ;
+    dcterms:source "DGA 2.16" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Purposes associated with combating the causes and consequences of climate change, including reducing gas emissions and fighting emergencies such as floods or wildfires" .
 
-dga:CommercialConfidentialityAgreement a rdfs:Class ;
+dgaterms:CommercialConfidentialityAgreement a rdfs:Class ;
     rdfs:label "Commercial Confidentiality Agreement" ;
-    dct:source "DGA 3.1.a" ;
+    dcterms:source "DGA 3.1.a" ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     skos:definition "Agreements that enforce commercial confidentiality including business, professional and company secrets" .
 
-dga:CommercialPurpose a rdfs:Class ;
+dgaterms:CommercialPurpose a rdfs:Class ;
     rdfs:label "Commercial Purpose" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Purposes associated with processing activities performed in a commercial setting or with intention to commercialise" .
 
-dga:CommerciallyConfidentialData a rdfs:Class ;
+dgaterms:CommerciallyConfidentialData a rdfs:Class ;
     rdfs:label "Commercially Confidential Data" ;
     rdfs:subClassOf dpv:Data ;
     skos:definition "Data protected through Commercial Confidentiality Agreements" .
 
-dga:CommonlyUsedOpenStandard a rdfs:Class ;
+dgaterms:CommonlyUsedOpenStandard a rdfs:Class ;
     rdfs:label "Commonly Used Open Standard" ;
-    dct:source "DGA 12.i" ;
-    rdfs:subClassOf dga:CommonlyUsedStandard, dga:OpenStandard ;
+    dcterms:source "DGA 12.i" ;
+    rdfs:subClassOf dgaterms:CommonlyUsedStandard, dgaterms:OpenStandard ;
     skos:definition "Commonly used and openly accessible standard" .
 
-dga:CommonlyUsedStandard a rdfs:Class ;
+dgaterms:CommonlyUsedStandard a rdfs:Class ;
     rdfs:label "Commonly Used Standard" ;
-    rdfs:subClassOf dga:Standard ;
+    rdfs:subClassOf dgaterms:Standard ;
     skos:definition "Commonly used standard" .
 
-dga:Compensation a rdfs:Class ;
+dgaterms:Compensation a rdfs:Class ;
     rdfs:label "Compensation" ;
     rdfs:subClassOf dpv:Benefit ;
     skos:definition "Compensation" .
 
-dga:ConfidentialData a rdfs:Class ;
+dgaterms:ConfidentialData a rdfs:Class ;
     rdfs:label "Confidential Data" ;
     rdfs:subClassOf dpv:Data ;
     skos:definition "Confidential Data" .
 
-dga:ConsentManagement a rdfs:Class ;
+dgaterms:ConsentManagement a rdfs:Class ;
     rdfs:label "Consent Management" ;
-    dct:source "DGA 12.n" ;
-    rdfs:subClassOf dga:DataSubjectRightsManagement ;
+    dcterms:source "DGA 12.n" ;
+    rdfs:subClassOf dgaterms:DataSubjectRightsManagement ;
     skos:definition "Methods to obtain and withdraw consent or permission to process data" .
 
-dga:ConsentManagementTool a rdfs:Class ;
+dgaterms:ConsentManagementTool a rdfs:Class ;
     rdfs:label "Consent Management Tool" ;
-    dct:source "DGA 21.3" ;
+    dcterms:source "DGA 21.3" ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     skos:definition "Technical tools to manage consent" .
 
-dga:ConvertFormat a rdfs:Class ;
+dgaterms:ConvertFormat a rdfs:Class ;
     rdfs:label "Convert Format" ;
-    dct:source "DGA 12.d" ;
+    dcterms:source "DGA 12.d" ;
     rdfs:subClassOf dpv:Transform ;
     skos:definition "Convert data from one format to another" .
 
-dga:DISPEUApproval a rdfs:Class ;
+dgaterms:DISPEUApproval a rdfs:Class ;
     rdfs:label "EU Approval for Data Intermediation Service Provider" ;
-    dct:source "DGA 11.9" ;
+    dcterms:source "DGA 11.9" ;
     rdfs:subClassOf dpv:Concept ;
     skos:definition "Confirmation and approval by a competent authority for the Data Intermediation Service Provider's compliance with Article 11 and Article 12 of the DGA" .
 
-dga:DataAltruism a rdfs:Class ;
+dgaterms:DataAltruism a rdfs:Class ;
     rdfs:label "Data Altruism" ;
-    dct:source "DGA 2.16" ;
+    dcterms:source "DGA 2.16" ;
     rdfs:comment "Data Altruism as a purpose should be combined with other purposes to indicate their altruistic interpretation or application. E.g. improving healthcare and data altruism in combination." ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Purposes associated with the voluntary sharing of data for the general interest of the public, such as healthcare or combating climate change" .
 
-dga:DataAltruismAnnualActivityReport a rdfs:Class ;
+dgaterms:DataAltruismAnnualActivityReport a rdfs:Class ;
     rdfs:label "Data Altruism Annual Activity Report" ;
-    dct:source "DGA 20.2" ;
+    dcterms:source "DGA 20.2" ;
     rdfs:subClassOf dpv:RecordsOfActivities ;
     skos:definition "Document containing the annual activities reported by a Data Altruism organisation" .
 
-dga:DataAltruismAuthority a rdfs:Class ;
+dgaterms:DataAltruismAuthority a rdfs:Class ;
     rdfs:label "Data Altruism Authority" ;
-    dct:source "DGA 23" ;
+    dcterms:source "DGA 23" ;
     rdfs:subClassOf dpv:Authority ;
     skos:definition "An authority tasked with overseeing the activity of data altruism organisations and maintaining a public register of said entities" .
 
-dga:DataAltruismNotice a rdfs:Class ;
+dgaterms:DataAltruismNotice a rdfs:Class ;
     rdfs:label "Data Altruism Notice" ;
-    dct:source "DGA 21.1" ;
+    dcterms:source "DGA 21.1" ;
     rdfs:subClassOf dpv:Notice ;
     skos:definition "Notice providing information regarding the processing of data for data altruistic purposes" .
 
-dga:DataAltruismOrganisation a rdfs:Class ;
+dgaterms:DataAltruismOrganisation a rdfs:Class ;
     rdfs:label "Data Altruism Organisation" ;
-    dct:source "DGA 2.16, 18" ;
+    dcterms:source "DGA 2.16, 18" ;
     rdfs:subClassOf dpv:NonProfitOrganisation ;
     skos:definition "An non-profit organisation whom collects and shares data for altruistic purposes" .
 
-dga:DataAssetList a rdfs:Class ;
+dgaterms:DataAssetList a rdfs:Class ;
     rdfs:label "Data Asset List" ;
-    dct:source "DGA 8.2" ;
+    dcterms:source "DGA 8.2" ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     skos:definition "Searchable asset list which contains available data resources including their data format and size and the conditions for theirÂ re-use" .
 
-dga:DataBreachNotification a rdfs:Class ;
+dgaterms:DataBreachNotification a rdfs:Class ;
     rdfs:label "Data Breach Notification" ;
-    dct:source "DGA 12.k, DGA 21.5 GDPR 33, GDPR 34" ;
+    dcterms:source "DGA 12.k, DGA 21.5 GDPR 33, GDPR 34" ;
     rdfs:subClassOf dpv:Notice ;
     skos:definition "Notification information a data breach or unauthorised transfer, access, use, or modification of data" .
 
-dga:DataCooperative a rdfs:Class ;
+dgaterms:DataCooperative a rdfs:Class ;
     rdfs:label "Data Cooperative" ;
-    dct:source "DGA 2.15, 10.c" ;
-    rdfs:subClassOf dga:DataIntermediationServiceProvider ;
+    dcterms:source "DGA 2.15, 10.c" ;
+    rdfs:subClassOf dgaterms:DataIntermediationServiceProvider ;
     skos:definition "An entity constituted by data subjects, one-person undertakings or SMEs who provides data intermediation services and supports its members in the exercise of their data-related rights" .
 
-dga:DataCooperativeService a rdfs:Class ;
+dgaterms:DataCooperativeService a rdfs:Class ;
     rdfs:label "Data Cooperative Service" ;
-    rdfs:subClassOf dga:DataIntermediationService ;
+    rdfs:subClassOf dgaterms:DataIntermediationService ;
     skos:definition "Service provided by a data cooperative" .
 
-dga:DataExchangeMethod a rdfs:Class ;
+dgaterms:DataExchangeMethod a rdfs:Class ;
     rdfs:label "Data Exchange Method" ;
-    dct:source "DGA 12.e" ;
+    dcterms:source "DGA 12.e" ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     skos:definition "Methods to facilitate the exchange of data" .
 
-dga:DataHolder a rdfs:Class ;
+dgaterms:DataHolder a rdfs:Class ;
     rdfs:label "Data Holder" ;
-    dct:source "DGA 2.8" ;
+    dcterms:source "DGA 2.8" ;
     rdfs:subClassOf dpv:LegalEntity ;
     skos:definition "An entity who has the right to grant access to or to share certain personal data or non-personal data" .
 
-dga:DataIntermediationAuthority a rdfs:Class ;
+dgaterms:DataIntermediationAuthority a rdfs:Class ;
     rdfs:label "Data Intermediation Authority" ;
-    dct:source "DGA 13" ;
+    dcterms:source "DGA 13" ;
     rdfs:subClassOf dpv:Authority ;
     skos:definition "An authority tasked with overseeing the activity of data intermediation service providers and maintaining a public register of said entities" .
 
-dga:DataIntermediationService a rdfs:Class ;
+dgaterms:DataIntermediationService a rdfs:Class ;
     rdfs:label "Data Intermediation Service" ;
-    dct:source "DGA 2.11" ;
+    dcterms:source "DGA 2.11" ;
     rdfs:subClassOf dpv:Service ;
     skos:definition "Service of data intermediation which aims to facilitate the sharing of data between Data Subjects, Data Holders and Data Users" .
 
-dga:DataIntermediationServiceBetweenHoldersUsers a rdfs:Class ;
+dgaterms:DataIntermediationServiceBetweenHoldersUsers a rdfs:Class ;
     rdfs:label "Data Intermediation Service between Data Holders and Data Users" ;
-    dct:source "DGA 10.a" ;
-    rdfs:subClassOf dga:DataIntermediationService ;
+    dcterms:source "DGA 10.a" ;
+    rdfs:subClassOf dgaterms:DataIntermediationService ;
     skos:definition "Data intermediation service for data shared between Data Holders and Data Users" .
 
-dga:DataIntermediationServiceBetweenSubjectsUsers a rdfs:Class ;
+dgaterms:DataIntermediationServiceBetweenSubjectsUsers a rdfs:Class ;
     rdfs:label "Data Intermediation Service between Data Subjects and Data Users" ;
-    dct:source "DGA 10.b" ;
-    rdfs:subClassOf dga:DataIntermediationService ;
+    dcterms:source "DGA 10.b" ;
+    rdfs:subClassOf dgaterms:DataIntermediationService ;
     skos:definition "Data intermediation service for data shared between Data Subjects, Natural Persons who are Data Holders and Data Users" .
 
-dga:DataIntermediationServiceNotification a rdfs:Class ;
+dgaterms:DataIntermediationServiceNotification a rdfs:Class ;
     rdfs:label "Data Intermediation Service Notification" ;
-    dct:source "DGA 11.1, DGA 11.9, DGA 11.12, DGA 11.13" ;
+    dcterms:source "DGA 11.1, DGA 11.9, DGA 11.12, DGA 11.13" ;
     rdfs:subClassOf dpv:Notice ;
     skos:definition "Notification by a Data Intermediation Service Provider to a competent authority concerning changes to details regarding its Data Intermediation Service" .
 
-dga:DataIntermediationServiceProvider a rdfs:Class ;
+dgaterms:DataIntermediationServiceProvider a rdfs:Class ;
     rdfs:label "Data Intermediation Service Provider" ;
-    dct:source "DGA 2.11" ;
+    dcterms:source "DGA 2.11" ;
     rdfs:subClassOf dpv:LegalEntity ;
     skos:definition "An entity who establishes commercial relationships for the data sharing between data subjects and data holders on the one hand and data users on the other" .
 
-dga:DataIntermediationServiceProviderForDataHolder a rdfs:Class ;
+dgaterms:DataIntermediationServiceProviderForDataHolder a rdfs:Class ;
     rdfs:label "Data Intermediation Service Provider for Data Holder" ;
-    dct:source "DGA 10.a" ;
-    rdfs:subClassOf dga:DataIntermediationServiceProvider ;
+    dcterms:source "DGA 10.a" ;
+    rdfs:subClassOf dgaterms:DataIntermediationServiceProvider ;
     skos:definition "An entity who makes data holders' data available for potential data users, including bilateral or multilateral exchanges of data and platforms and databases for the joint exploitation of data" .
 
-dga:DataIntermediationServiceProviderForDataSubject a rdfs:Class ;
+dgaterms:DataIntermediationServiceProviderForDataSubject a rdfs:Class ;
     rdfs:label "Data Intermediation Service Provider for Data Subject" ;
-    dct:source "DGA 10.b" ;
-    rdfs:subClassOf dga:DataIntermediationServiceProvider ;
+    dcterms:source "DGA 10.b" ;
+    rdfs:subClassOf dgaterms:DataIntermediationServiceProvider ;
     skos:definition "An entity who makes data subjects' personal data available for potential data users" .
 
-dga:DataIntermediationTechnology a rdfs:Class ;
+dgaterms:DataIntermediationTechnology a rdfs:Class ;
     rdfs:label "Data Intermediation Technology" ;
-    dct:source "DGA 10.a" ;
+    dcterms:source "DGA 10.a" ;
     rdfs:subClassOf dpv:Technology ;
     skos:definition "Technology related to the provision of data intermediation services" .
 
-dga:DataReuseCompetentBody a rdfs:Class ;
+dgaterms:DataReuseCompetentBody a rdfs:Class ;
     rdfs:label "Data Reuse Competent Body" ;
-    dct:source "DGA 7" ;
+    dcterms:source "DGA 7" ;
     rdfs:subClassOf dpv:LegalEntity ;
     skos:definition "An entity designated by a public sector body to provide legal and technical support on the access and reuse of public sector data" .
 
-dga:DataReusePolicy a rdfs:Class ;
+dgaterms:DataReusePolicy a rdfs:Class ;
     rdfs:label "Data Reuse Policy" ;
     rdfs:subClassOf dpv:Policy ;
     skos:definition "A Policy to govern data re-use" .
 
-dga:DataReuseRequest a rdfs:Class ;
+dgaterms:DataReuseRequest a rdfs:Class ;
     rdfs:label "Data Reuse Request" ;
     rdfs:subClassOf dpv:Concept ;
     skos:definition "Request for re-use some data" .
 
-dga:DataReuseRequestProcedure a rdfs:Class ;
+dgaterms:DataReuseRequestProcedure a rdfs:Class ;
     rdfs:label "Data Reuse Request Procedure" ;
-    dct:source "DGA 5.1" ;
+    dcterms:source "DGA 5.1" ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     skos:definition "Procedure to request data for reuse via single information point" .
 
-dga:DataSubjectRightsManagement a rdfs:Class ;
+dgaterms:DataSubjectRightsManagement a rdfs:Class ;
     rdfs:label "Data Subject Rights Management" ;
-    dct:source "DGA 12.m" ;
+    dcterms:source "DGA 12.m" ;
     rdfs:subClassOf dpv:RightsManagement ;
     skos:definition "Methods to facilitate the exercising of data subjects' rights" .
 
-dga:DataTransferNotice a rdfs:Class ;
+dgaterms:DataTransferNotice a rdfs:Class ;
     rdfs:label "Data Transfer Notice" ;
-    dct:source "DGA 5.9" ;
+    dcterms:source "DGA 5.9" ;
     rdfs:subClassOf dpv:Notice ;
     skos:definition "Notice for the legal entity for the transfer of its data " .
 
-dga:DataUser a rdfs:Class ;
+dgaterms:DataUser a rdfs:Class ;
     rdfs:label "Data User" ;
-    dct:source "DGA 2.9" ;
+    dcterms:source "DGA 2.9" ;
     rdfs:subClassOf dpv:LegalEntity ;
     skos:definition "An entity who has access an the right to use personal or non-personal data for commercial or non-commercial purposes" .
 
-dga:Display a rdfs:Class ;
+dgaterms:Display a rdfs:Class ;
     rdfs:label "Display" ;
-    dct:source "DGA 2.20" ;
+    dcterms:source "DGA 2.20" ;
     rdfs:seeAlso odrl:display ;
     rdfs:subClassOf dpv:MakeAvailable ;
     skos:definition "Show data in an organised way so that it can be seen by the public" .
 
-dga:Download a rdfs:Class ;
+dgaterms:Download a rdfs:Class ;
     rdfs:label "Download" ;
-    dct:source "DGA 2.13, 2.20" ;
+    dcterms:source "DGA 2.13, 2.20" ;
     rdfs:subClassOf dpv:Copy ;
     skos:definition "Copy and receive data from one computer system to another over a network, e.g., over the internet" .
 
-dga:EURegisterOfDataAltruismOrganisations a rdfs:Class ;
+dgaterms:EURegisterOfDataAltruismOrganisations a rdfs:Class ;
     rdfs:label "EU's Public Register of Data Altruism Organisations" ;
-    dct:source "DGA 19.5" ;
-    rdfs:subClassOf dga:PublicRegister ;
+    dcterms:source "DGA 19.5" ;
+    rdfs:subClassOf dgaterms:PublicRegister ;
     skos:definition "Registry maintained by EU containing list of recognised data altruism organisations" .
 
-dga:EUSingleInformationPointProvider a rdfs:Class ;
+dgaterms:EUSingleInformationPointProvider a rdfs:Class ;
     rdfs:label "EU Single Information Point Provider" ;
-    dct:source "DGA 8.4" ;
-    rdfs:subClassOf dga:SingleInformationPointProvider ;
+    dcterms:source "DGA 8.4" ;
+    rdfs:subClassOf dgaterms:SingleInformationPointProvider ;
     skos:definition "An entity who is responsible for receiving and transmiting requests for the re-use of public data in the EU" .
 
-dga:EnforceTransferControl a rdfs:Class ;
+dgaterms:EnforceTransferControl a rdfs:Class ;
     rdfs:label "Enforce Transfer Control" ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     skos:definition "Purposes associated with conducting or enforcing transfer control so as to limit the transfer of data" .
 
-dga:EnhanceDataInteroperability a rdfs:Class ;
+dgaterms:EnhanceDataInteroperability a rdfs:Class ;
     rdfs:label "Enhance Data Interoperability" ;
-    dct:source "DGA 12.d" ;
+    dcterms:source "DGA 12.d" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Enhance the interoperability of the data" .
 
-dga:EnsureDataHarmonisationWithStandards a rdfs:Class ;
+dgaterms:EnsureDataHarmonisationWithStandards a rdfs:Class ;
     rdfs:label "Ensure Data Harmonisation with Standards" ;
-    dct:source "DGA 12.d" ;
+    dcterms:source "DGA 12.d" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Enhance harmonisation of data with standards" .
 
-dga:EuropeanDataAltruismConsentForm a rdfs:Class ;
+dgaterms:EuropeanDataAltruismConsentForm a rdfs:Class ;
     rdfs:label "European Data Altruism Consent Form" ;
-    dct:source "DGA 25.1" ;
+    dcterms:source "DGA 25.1" ;
     rdfs:subClassOf dpv:ConsentManagementTool ;
     skos:definition "A form provided by the European Commission for collecting consent" .
 
-dga:EuropeanDataInnovationBoard a rdfs:Class ;
+dgaterms:EuropeanDataInnovationBoard a rdfs:Class ;
     rdfs:label "European Data Innovation Board" ;
-    dct:source "DGA 29" ;
+    dcterms:source "DGA 29" ;
     rdfs:subClassOf dpv:SupraNationalAuthority ;
     skos:definition "An authority tasked with overseeing the activities of data intermediation service providers and data altruism organisations" .
 
-dga:ExchangeViewsOnDataProcessing a rdfs:Class ;
+dgaterms:ExchangeViewsOnDataProcessing a rdfs:Class ;
     rdfs:label "Exchange Views on Data Processing" ;
-    dct:source "DGA 2.15" ;
+    dcterms:source "DGA 2.15" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Supporting inviduals and entities in exchanging views on data processing purposes and relevant information" .
 
-dga:Export a rdfs:Class ;
+dgaterms:Export a rdfs:Class ;
     rdfs:label "Export" ;
-    dct:source "DGA 2.20" ;
+    dcterms:source "DGA 2.20" ;
     rdfs:subClassOf dpv:Copy ;
     skos:definition "Provide a copy of data from one system to another" .
 
-dga:FacilitateDataExchange a rdfs:Class ;
+dgaterms:FacilitateDataExchange a rdfs:Class ;
     rdfs:label "Facilitate Data Exchange" ;
-    dct:source "DGA 12.d" ;
+    dcterms:source "DGA 12.d" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Facilitate exchange of data" .
 
-dga:Fees a rdfs:Class ;
+dgaterms:Fees a rdfs:Class ;
     rdfs:label "Fees" ;
-    dct:source "DGA 2.10" ;
+    dcterms:source "DGA 2.10" ;
     rdfs:subClassOf dpv:Concept ;
     skos:definition "Fee charged by an entity to provide a service" .
 
-dga:ImproveHealthcare a rdfs:Class ;
+dgaterms:ImproveHealthcare a rdfs:Class ;
     rdfs:label "Improve Healthcare" ;
-    dct:source "DGA 2.16" ;
+    dcterms:source "DGA 2.16" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Purposes associated with improving the public healthcare systems across the Member States, including improving personalised treatments and helping cure chronic diseases" .
 
-dga:ImprovePublicServices a rdfs:Class ;
+dgaterms:ImprovePublicServices a rdfs:Class ;
     rdfs:label "Improve Public Services" ;
-    dct:source "DGA 2.16" ;
+    dcterms:source "DGA 2.16" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Purposes associated with improving the provision of public services, such as public safety, education or law enforcement" .
 
-dga:ImproveTransportMobility a rdfs:Class ;
+dgaterms:ImproveTransportMobility a rdfs:Class ;
     rdfs:label "Improve Transport and Mobility" ;
-    dct:source "DGA 2.16" ;
+    dcterms:source "DGA 2.16" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Purposes associated with improving traffic, public transport systems or costs for drivers" .
 
-dga:IntellectualProperty a rdfs:Class ;
+dgaterms:IntellectualProperty a rdfs:Class ;
     rdfs:label "Intellectual Property" ;
     rdfs:subClassOf dpv:Data ;
     skos:definition "Data protected through Intellectual Property" .
 
-dga:IntellectualPropertyRightsManagement a rdfs:Class ;
+dgaterms:IntellectualPropertyRightsManagement a rdfs:Class ;
     rdfs:label "Intellectual Property Rights Management" ;
-    dct:source "DGA 3.1.c" ;
+    dcterms:source "DGA 3.1.c" ;
     rdfs:subClassOf dpv:RightsManagement ;
     skos:definition "Management of Intellectual Property Rights with a view to identify and safeguard and enforce them" .
 
-dga:InternationalStandard a rdfs:Class ;
+dgaterms:InternationalStandard a rdfs:Class ;
     rdfs:label "International Standard" ;
-    rdfs:subClassOf dga:Standard ;
+    rdfs:subClassOf dgaterms:Standard ;
     skos:definition "Internationally recognised standard" .
 
-dga:LegalMeasure a rdfs:Class ;
+dgaterms:LegalMeasure a rdfs:Class ;
     rdfs:label "Legal Measure" ;
-    dct:source "DGA 12.j" ;
+    dcterms:source "DGA 12.j" ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     skos:definition "Legally-recognised agreements, e.g., contracts" .
 
-dga:Licence a rdfs:Class ;
+dgaterms:Licence a rdfs:Class ;
     rdfs:label "Licence" ;
-    dct:source "DGA 2.10" ;
+    dcterms:source "DGA 2.10" ;
     rdfs:seeAlso odrl:Offer ;
     rdfs:subClassOf dpv:ContractualTerms ;
     skos:definition "Document which states the conditions for usage of data" .
 
-dga:LocalSingleInformationPointProvider a rdfs:Class ;
+dgaterms:LocalSingleInformationPointProvider a rdfs:Class ;
     rdfs:label "Local Single Information Point Provider" ;
-    rdfs:subClassOf dga:SingleInformationPointProvider ;
+    rdfs:subClassOf dgaterms:SingleInformationPointProvider ;
     skos:definition "A local entity who is responsible for receiving and transmiting requests for the re-use of public data" .
 
-dga:MisusePreventionAndDetection a rdfs:Class ;
+dgaterms:MisusePreventionAndDetection a rdfs:Class ;
     rdfs:label "Misuse, Prevention and Detection" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Prevention and Detection of Misuse or Abuse of services" .
 
-dga:NationalDataAltruismPolicy a rdfs:Class ;
+dgaterms:NationalDataAltruismPolicy a rdfs:Class ;
     rdfs:label "National Data Altruism Policy" ;
-    dct:source "DGA 16" ;
+    dcterms:source "DGA 16" ;
     rdfs:subClassOf dpv:Policy ;
     skos:definition "A Policy established at National level regarding Data Altruism" .
 
-dga:NationalRegisterOfDataAltruismOrganisations a rdfs:Class ;
+dgaterms:NationalRegisterOfDataAltruismOrganisations a rdfs:Class ;
     rdfs:label "National Public Register of Data Altruism Organisations" ;
-    dct:source "DGA 19.6" ;
-    rdfs:subClassOf dga:PublicRegister ;
+    dcterms:source "DGA 19.6" ;
+    rdfs:subClassOf dgaterms:PublicRegister ;
     skos:definition "Registry maintained at National level containing list of recognised data altruism organisations" .
 
-dga:NationalSingleInformationPointProvider a rdfs:Class ;
+dgaterms:NationalSingleInformationPointProvider a rdfs:Class ;
     rdfs:label "National Single Information Point Provider" ;
-    rdfs:subClassOf dga:SingleInformationPointProvider ;
+    rdfs:subClassOf dgaterms:SingleInformationPointProvider ;
     skos:definition "A national entity who is responsible for receiving and transmiting requests for the re-use of public data" .
 
-dga:NegotiateContractualAgreements a rdfs:Class ;
+dgaterms:NegotiateContractualAgreements a rdfs:Class ;
     rdfs:label "Negotiate Contractual Agreements" ;
-    dct:source "DGA 2.15" ;
+    dcterms:source "DGA 2.15" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Negotiate contractual agreements regarding processing of data and other matters, including terms and conditions" .
 
-dga:NonCommercialPurpose a rdfs:Class ;
+dgaterms:NonCommercialPurpose a rdfs:Class ;
     rdfs:label "Non-commercial Purpose" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Purposes associated with processing activities performed in a non-commercial setting or without intention to commercialise" .
 
-dga:OpenStandard a rdfs:Class ;
+dgaterms:OpenStandard a rdfs:Class ;
     rdfs:label "Open Standard" ;
-    rdfs:subClassOf dga:Standard ;
+    rdfs:subClassOf dgaterms:Standard ;
     skos:definition "Openly accessible standard" .
 
-dga:PermissionManagement a rdfs:Class ;
+dgaterms:PermissionManagement a rdfs:Class ;
     rdfs:label "Permission Management" ;
-    dct:source "DGA 12.n" ;
+    dcterms:source "DGA 12.n" ;
     rdfs:subClassOf dpv:RightsManagement ;
     skos:definition "Methods to obtain and withdraw consent or permission to process data" .
 
-dga:PermissionManagementTool a rdfs:Class ;
+dgaterms:PermissionManagementTool a rdfs:Class ;
     rdfs:label "Permission Management Tool" ;
-    dct:source "DGA 21.3" ;
+    dcterms:source "DGA 21.3" ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     skos:definition "Technical tools to manage permissions" .
 
-dga:PersonalDataReuseNotice a rdfs:Class ;
+dgaterms:PersonalDataReuseNotice a rdfs:Class ;
     rdfs:label "Personal Data Reuse Notice" ;
-    dct:source "DGA 12.m" ;
+    dcterms:source "DGA 12.m" ;
     rdfs:subClassOf dpv:ConsentNotice ;
     skos:definition "Notice for data subjects to provide consent based on information and advise regarding intended use of data, exercise of rights, and applicable terms and conditions" .
 
-dga:PrivateSectorBody a rdfs:Class ;
+dgaterms:PrivateSectorBody a rdfs:Class ;
     rdfs:label "Private Sector Body" ;
     rdfs:subClassOf dpv:LegalEntity ;
     skos:definition "Private Sector Body" .
 
-dga:ProtectionOfIPR a rdfs:Class ;
+dgaterms:ProtectionOfIPR a rdfs:Class ;
     rdfs:label "Protection of Intellectual Property Rights" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Purposes associated with the protection of intellectual property rights" .
 
-dga:ProtectionOfNationalSecurity a rdfs:Class ;
+dgaterms:ProtectionOfNationalSecurity a rdfs:Class ;
     rdfs:label "Protection of National Security" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Purposes associated with the protection of national security" .
 
-dga:ProtectionOfPublicSecurity a rdfs:Class ;
+dgaterms:ProtectionOfPublicSecurity a rdfs:Class ;
     rdfs:label "Protection of Public Security" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Purposes associated with the protection of public security" .
 
-dga:ProvideOfficialStatistics a rdfs:Class ;
+dgaterms:ProvideOfficialStatistics a rdfs:Class ;
     rdfs:label "Provide Official Statistics" ;
-    dct:source "DGA 2.16" ;
+    dcterms:source "DGA 2.16" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Purposes associated with facilitating the development, production and dissemination of reliable official statistics" .
 
-dga:PublicPolicyMaking a rdfs:Class ;
+dgaterms:PublicPolicyMaking a rdfs:Class ;
     rdfs:label "Public Policy Making" ;
-    dct:source "DGA 2.16" ;
+    dcterms:source "DGA 2.16" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Purposes associated with public policy making, such as the development of new laws" .
 
-dga:PublicRegister a rdfs:Class ;
+dgaterms:PublicRegister a rdfs:Class ;
     rdfs:label "Public Register" ;
     rdfs:subClassOf dpv:Concept ;
     skos:definition "A register containing information which is made publicly available" .
 
-dga:PublicSectorBody a rdfs:Class ;
+dgaterms:PublicSectorBody a rdfs:Class ;
     rdfs:label "Public Sector Body" ;
-    dct:source "DGA 2.17" ;
+    dcterms:source "DGA 2.17" ;
     rdfs:subClassOf dpv:LegalEntity ;
     skos:definition "An entity or association of entities governed by public law formed by one or more State, regional or local authorities" .
 
-dga:RegionalSingleInformationPointProvider a rdfs:Class ;
+dgaterms:RegionalSingleInformationPointProvider a rdfs:Class ;
     rdfs:label "Regional Single Information Point Provider" ;
-    rdfs:subClassOf dga:SingleInformationPointProvider ;
+    rdfs:subClassOf dgaterms:SingleInformationPointProvider ;
     skos:definition "A regional entity who is responsible for receiving and transmiting requests for the re-use of public data" .
 
-dga:RegisterOfDataAltruismOrganisations a rdfs:Class ;
+dgaterms:RegisterOfDataAltruismOrganisations a rdfs:Class ;
     rdfs:label "Public Register of Data Altruism Organisations" ;
-    dct:source "DGA 19.5" ;
-    rdfs:subClassOf dga:PublicRegister ;
+    dcterms:source "DGA 19.5" ;
+    rdfs:subClassOf dgaterms:PublicRegister ;
     skos:definition "Registry containing list of recognised data altruism organisations" .
 
-dga:RegisterOfDataIAltruismActivity a rdfs:Class ;
+dgaterms:RegisterOfDataIAltruismActivity a rdfs:Class ;
     rdfs:label "Register of Data Altruism Activity" ;
-    dct:source "DGA 20" ;
+    dcterms:source "DGA 20" ;
     rdfs:subClassOf dpv:RecordsOfActivities ;
     skos:definition "Document that logs the activity of the data altruism organisation" .
 
-dga:RegisterOfDataIntermediationActivity a rdfs:Class ;
+dgaterms:RegisterOfDataIntermediationActivity a rdfs:Class ;
     rdfs:label "Register of Data Intermediation Activity" ;
-    dct:source "DGA 12.o" ;
+    dcterms:source "DGA 12.o" ;
     rdfs:subClassOf dpv:RecordsOfActivities ;
     skos:definition "Document that logs the activity of the data intermediation service provider" .
 
-dga:RegisterOfDataIntermediationServiceProviders a rdfs:Class ;
+dgaterms:RegisterOfDataIntermediationServiceProviders a rdfs:Class ;
     rdfs:label "Public Register of Data Intermediation Service Providers" ;
-    dct:source "DGA 11.10" ;
-    rdfs:subClassOf dga:PublicRegister ;
+    dcterms:source "DGA 11.10" ;
+    rdfs:subClassOf dgaterms:PublicRegister ;
     skos:definition "Document that contains a publicly available list of data intermediation service providers" .
 
-dga:RegisterOfEntities a rdfs:Class ;
+dgaterms:RegisterOfEntities a rdfs:Class ;
     rdfs:label "Public Register of Entities" ;
-    rdfs:subClassOf dga:PublicRegister ;
+    rdfs:subClassOf dgaterms:PublicRegister ;
     skos:definition "Document that contains a publicly available list of entities that perform a certain activity within a certain location or jurisdiction" .
 
-dga:Reuse a rdfs:Class ;
+dgaterms:Reuse a rdfs:Class ;
     rdfs:label "Reuse" ;
     rdfs:comment "Difference in context can be for means, purpose, legal basis, etc." ;
     rdfs:subClassOf dpv:Use ;
     skos:definition "Use of data with a subsequent context i.e. different from its initial context" .
 
-dga:Reward a rdfs:Class ;
+dgaterms:Reward a rdfs:Class ;
     rdfs:label "Reward" ;
     rdfs:subClassOf dpv:Benefit ;
     skos:definition "Reward" .
 
-dga:RightToDataConversionOptOut a rdfs:Class ;
+dgaterms:RightToDataConversionOptOut a rdfs:Class ;
     rdfs:label "Right to Data Conversion Opt-out" ;
-    dct:source "DGA 12.d" ;
+    dcterms:source "DGA 12.d" ;
     rdfs:subClassOf dpv:Right ;
     skos:definition "Right of data subjects and data holders to opt-out of data conversions e.g. enhance interoperability or harmonisation with standards" .
 
-dga:RightToImpartialBodyReview a rdfs:Class ;
+dgaterms:RightToImpartialBodyReview a rdfs:Class ;
     rdfs:label "Right to Impartial Body Review" ;
-    dct:source "DGA 28.3" ;
+    dcterms:source "DGA 28.3" ;
     rdfs:subClassOf dpv:Right ;
     skos:definition "Right of data subjects and data holders to get an review by an impartial body with the appropriate expertise" .
 
-dga:RightToLodgeComplaint a rdfs:Class ;
+dgaterms:RightToLodgeComplaint a rdfs:Class ;
     rdfs:label "Right to Lodge Complaint" ;
-    dct:source "DGA 27" ;
+    dcterms:source "DGA 27" ;
     rdfs:subClassOf dpv:Right ;
     skos:definition "Right of data subjects and data holders to lodge a complaint" .
 
-dga:RiskOfReIdentification a rdfs:Class ;
+dgaterms:RiskOfReIdentification a rdfs:Class ;
     rdfs:label "Risk of Re-identification" ;
     rdfs:subClassOf dpv:Risk ;
     skos:definition "Risk of Re-identification" .
 
-dga:SMEOrganisation a rdfs:Class ;
+dgaterms:SMEOrganisation a rdfs:Class ;
     rdfs:label "Small or Medium Enterprise" ;
     rdfs:subClassOf dpv:LegalEntity ;
     skos:definition "Organisations with a low number of employees" .
 
-dga:ScientificResearch a rdfs:Class ;
+dgaterms:ScientificResearch a rdfs:Class ;
     rdfs:label "Scientific  Research" ;
-    dct:source "DGA 2.16" ;
+    dcterms:source "DGA 2.16" ;
     rdfs:subClassOf dpv:ResearchAndDevelopment ;
     skos:definition "Purposes associated with scientific research" .
 
-dga:SectorialSingleInformationPointProvider a rdfs:Class ;
+dgaterms:SectorialSingleInformationPointProvider a rdfs:Class ;
     rdfs:label "Sectorial Single Information Point Provider" ;
-    rdfs:subClassOf dga:SingleInformationPointProvider ;
+    rdfs:subClassOf dgaterms:SingleInformationPointProvider ;
     skos:definition "An entity who is responsible for receiving and transmiting requests for the re-use of public data for a particular sector" .
 
-dga:SecureProcessingEnvironment a rdfs:Class ;
+dgaterms:SecureProcessingEnvironment a rdfs:Class ;
     rdfs:label "Secure Processing Environment" ;
-    dct:source "DGA 2.20" ;
+    dcterms:source "DGA 2.20" ;
     rdfs:subClassOf dpv:Technology ;
     skos:definition "Physical or virtual environment to ensure compliance with EU law" .
 
-dga:SensitiveData a rdfs:Class ;
+dgaterms:SensitiveData a rdfs:Class ;
     rdfs:label "Sensitive Data" ;
     rdfs:subClassOf dpv:Data ;
     skos:definition "Sensitive Data" .
 
-dga:SensitiveNonPersonalData a rdfs:Class ;
+dgaterms:SensitiveNonPersonalData a rdfs:Class ;
     rdfs:label "Sensitive Non-personal Data" ;
     rdfs:subClassOf dpv:SensitiveData ;
     skos:definition "Sensitive Non-personal Data" .
 
-dga:SingleInformationPoint a rdfs:Class ;
+dgaterms:SingleInformationPoint a rdfs:Class ;
     rdfs:label "Single Information Point" ;
     rdfs:subClassOf dpv:Service ;
     skos:definition "Service responsible for receiving and transmiting requests for the re-use of public data" .
 
-dga:SingleInformationPointProvider a rdfs:Class ;
+dgaterms:SingleInformationPointProvider a rdfs:Class ;
     rdfs:label "Single Information Point Provider" ;
-    dct:source "DGA 8" ;
+    dcterms:source "DGA 8" ;
     rdfs:subClassOf dpv:LegalEntity ;
     skos:definition "An entity who is responsible for receiving and transmiting requests for the re-use of public data" .
 
-dga:Standard a rdfs:Class ;
+dgaterms:Standard a rdfs:Class ;
     rdfs:label "Standard" ;
     rdfs:subClassOf dpv:Concept ;
     skos:definition "Standard" .
 
-dga:StartupOrganisation a rdfs:Class ;
+dgaterms:StartupOrganisation a rdfs:Class ;
     rdfs:label "Startup" ;
     rdfs:subClassOf dpv:LegalEntity ;
     skos:definition "Newly established organisation" .
 
-dga:StatisticalConfidentialityAgreement a rdfs:Class ;
+dgaterms:StatisticalConfidentialityAgreement a rdfs:Class ;
     rdfs:label "Statistical Confidentiality Agreement" ;
-    dct:source "DGA 3.1.b" ;
+    dcterms:source "DGA 3.1.b" ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     skos:definition "Agreements that enforce statistical confidentiality " .
 
-dga:StatisticallyConfidentialData a rdfs:Class ;
+dgaterms:StatisticallyConfidentialData a rdfs:Class ;
     rdfs:label "Statistically Confidential Data" ;
     rdfs:subClassOf dpv:Data ;
     skos:definition "Data protected through Statistical Confidentiality Agreements" .
 
-dga:SupportInformedConsentChoices a rdfs:Class ;
+dgaterms:SupportInformedConsentChoices a rdfs:Class ;
     rdfs:label "Support Making Choices for Informed Choices" ;
-    dct:source "DGA 2.15" ;
+    dcterms:source "DGA 2.15" ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Supporting individuals in understanding and making choices with respect to informed consent" .
 
-dga:TechnologyDesigner a rdfs:Class ;
+dgaterms:TechnologyDesigner a rdfs:Class ;
     rdfs:label "Technology Designer" ;
-    dct:source "DGA 26.3" ;
+    dcterms:source "DGA 26.3" ;
     rdfs:subClassOf tech:TechnologyActor ;
     skos:definition "Actor that designsTechnology" .
 
-dga:TechnologyInstaller a rdfs:Class ;
+dgaterms:TechnologyInstaller a rdfs:Class ;
     rdfs:label "Technology Installer" ;
-    dct:source "DGA 26.3" ;
+    dcterms:source "DGA 26.3" ;
     rdfs:subClassOf tech:TechnologyActor ;
     skos:definition "Actor that installs Technology" .
 
-dga:TechnologyMaintainer a rdfs:Class ;
+dgaterms:TechnologyMaintainer a rdfs:Class ;
     rdfs:label "Technology Maintainer" ;
-    dct:source "DGA 26.3" ;
+    dcterms:source "DGA 26.3" ;
     rdfs:subClassOf tech:TechnologyActor ;
     skos:definition "Actor that maintains Technology" .
 
-dga:TechnologyManufacturer a rdfs:Class ;
+dgaterms:TechnologyManufacturer a rdfs:Class ;
     rdfs:label "Technology Manufacturer" ;
-    dct:source "DGA 26.3" ;
+    dcterms:source "DGA 26.3" ;
     rdfs:subClassOf tech:TechnologyActor ;
     skos:definition "Actor that manufactures Technology" .
 
-dga:TechnologyOwner a rdfs:Class ;
+dgaterms:TechnologyOwner a rdfs:Class ;
     rdfs:label "Technology Owner" ;
-    dct:source "DGA 26.3" ;
+    dcterms:source "DGA 26.3" ;
     rdfs:subClassOf tech:TechnologyActor ;
     skos:definition "Actor that owns Technology" .
 
-dga:TechnologyPurchaser a rdfs:Class ;
+dgaterms:TechnologyPurchaser a rdfs:Class ;
     rdfs:label "Technology Purchaser" ;
-    dct:source "DGA 26.3" ;
+    dcterms:source "DGA 26.3" ;
     rdfs:subClassOf tech:TechnologyActor ;
     skos:definition "Actor that purchases Technology" .
 
-dga:TechnologySupplier a rdfs:Class ;
+dgaterms:TechnologySupplier a rdfs:Class ;
     rdfs:label "Technology Supplier" ;
-    dct:source "DGA 26.3" ;
+    dcterms:source "DGA 26.3" ;
     rdfs:subClassOf tech:TechnologyActor ;
     skos:definition "Actor that supplies Technology" .
 
-dga:TechnologyUser a rdfs:Class ;
+dgaterms:TechnologyUser a rdfs:Class ;
     rdfs:label "Technology User" ;
-    dct:source "DGA 26.3" ;
+    dcterms:source "DGA 26.3" ;
     rdfs:subClassOf tech:TechnologyActor ;
     skos:definition "" .
 
-dga:ThirdCountryDataRequestNotice a rdfs:Class ;
+dgaterms:ThirdCountryDataRequestNotice a rdfs:Class ;
     rdfs:label "Third Country Data Request Notice" ;
-    dct:source "DGA 31.5" ;
+    dcterms:source "DGA 31.5" ;
     rdfs:subClassOf dpv:DataTransferNotice ;
     skos:definition "Notice regarding a data request for the transfer of data to a third country recipient" .
 
-dga: a owl:Ontology ;
-    rdfs:label "Data Governance Act Vocabulary" ;
-    dct:creator "Anon" ;
-    dct:license <https://creativecommons.org/licenses/by/4.0/> .
-
-dga:hasActivityLogs a rdf:Property ;
+dgaterms:hasActivityLogs a rdf:Property ;
     rdfs:label "has activity logs" ;
-    rdfs:domain dga:RegisterOfDataIAltruismActivity ;
-    rdfs:range dga:AltruismActivityLog ;
+    rdfs:domain dgaterms:RegisterOfDataIAltruismActivity ;
+    rdfs:range dgaterms:AltruismActivityLog ;
     skos:definition "Indicates associtation to an entity's activity logs" .
 
-dga:hasCompetentBody a rdf:Property ;
+dgaterms:hasCompetentBody a rdf:Property ;
     rdfs:label "has competent body" ;
-    rdfs:domain dga:PublicSectorBody ;
-    rdfs:range dga:DataReuseCompetentBody ;
+    rdfs:domain dgaterms:PublicSectorBody ;
+    rdfs:range dgaterms:DataReuseCompetentBody ;
     skos:definition "Indicates association with competent body" .
 
-dga:hasDataAltruismOrganisation a rdf:Property ;
+dgaterms:hasDataAltruismOrganisation a rdf:Property ;
     rdfs:label "has data altruism organisation" ;
-    rdfs:range dga:DataAltruismOrganisation ;
+    rdfs:range dgaterms:DataAltruismOrganisation ;
     skos:definition "Indicates association with data altruism organisation" .
 
-dga:hasDataHolder a rdf:Property ;
+dgaterms:hasDataHolder a rdf:Property ;
     rdfs:label "has data holder" ;
-    rdfs:range dga:DataHolder ;
+    rdfs:range dgaterms:DataHolder ;
     skos:definition "Indicates association with data holder" .
 
-dga:hasDataIntermediationServiceProvider a rdf:Property ;
+dgaterms:hasDataIntermediationServiceProvider a rdf:Property ;
     rdfs:label "has data intermediation service provider" ;
-    rdfs:domain dga:RegisterOfDataIntermediationServiceProviders ;
-    rdfs:range dga:DataIntermediationServiceProvider ;
+    rdfs:domain dgaterms:RegisterOfDataIntermediationServiceProviders ;
+    rdfs:range dgaterms:DataIntermediationServiceProvider ;
     skos:definition "Indicates association with data intermediation service provider" .
 
-dga:hasDataUser a rdf:Property ;
+dgaterms:hasDataUser a rdf:Property ;
     rdfs:label "has data user" ;
-    rdfs:range dga:DataUser ;
+    rdfs:range dgaterms:DataUser ;
     skos:definition "Indicates association with data user" .
 
-dga:hasFee a rdf:Property ;
+dgaterms:hasFee a rdf:Property ;
     rdfs:label "has fee" ;
-    dct:source "DGA 2.10" ;
+    dcterms:source "DGA 2.10" ;
     rdfs:subClassOf dpv:LegalEntity ;
     skos:definition "Indicates the fee charged by an entity to provide a service" .
 
-dga:hasSingleInformationPoint a rdf:Property ;
+dgaterms:hasSingleInformationPoint a rdf:Property ;
     rdfs:label "has single information point" ;
-    rdfs:domain dga:PublicSectorBody ;
-    rdfs:range dga:SingleInformationPointProvider ;
+    rdfs:domain dgaterms:PublicSectorBody ;
+    rdfs:range dgaterms:SingleInformationPointProvider ;
     skos:definition "Indicates the responsible single information point provider" .
 
-dga:hasThirdCountryJurisdiction a rdf:Property ;
+dgaterms:hasThirdCountryJurisdiction a rdf:Property ;
     rdfs:label "has third country jurisdiction" ;
-    dct:source "DGA 12.n" ;
+    dcterms:source "DGA 12.n" ;
     rdfs:subClassOf dpv:Location,
         dpv:hasJurisdiction ;
     skos:definition "Indicates applicability of third country jurisdiction" .
