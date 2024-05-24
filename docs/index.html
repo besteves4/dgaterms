@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DGA DCAT-AP spec</title>
+  <title>DGAterms</title>
   <meta http-equiv='Content-Type' content='text/html;charset=utf-8' />
   <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
   <script type="text/javascript" class="remove">
     var respecConfig = {
-      title: "DGA DCAT-AP spec",
-      subtitle: "DGA DCAT-AP spec",
-      shortName: "dga dcat-ap",
+      title: "DGAterms",
+      subtitle: "A vocabulary to describe information flows in the Data Governance Act",
+      shortName: "dgaterms",
       specStatus: "unofficial",
-      latestVersion: "https://besteves4.github.io/dgaterms/",
-      publishDate: "2023-07-05",
+      latestVersion: "https://w3id.org/dgaterms",
+      publishDate: "2023-06-27",
       doJsonLd: true,
       maxToclevel: 3,
       github: "besteves4/dgaterms",
@@ -25,99 +25,441 @@
         },
         {
           name: "Harshvardhan J. Pandit",
-          url: "v",
+          url: "https://harshp.com/",
           company: "ADAPT Centre, Dublin City University",
-          companyURL: "http://dcu.ie/"
+          companyURL: "https://www.dcu.ie/"
+        },
+        {
+          name: "Víctor Rodríguez-Doncel",
+          url: "http://cosasbuenas.es/",
+          company: "OEG, Universidad Politécnica de Madrid",
+          companyURL: "https://oeg.fi.upm.es/"
+        },
+        {
+          name: "Dave Lewis",
+          url: "",
+          company: "ADAPT Centre, Trinity College Dublin",
+          companyURL: "https://www.tcd.ie/"
         }]
     };
   </script>
-
-  <body>
-    <section id="abstract">
-      <p>DCAT-AP specification for DGA datasets and registers</p>
-    </section>
-    <section id="introduction">
-      <h2>Introduction</h2>
-      <p>...</p>
-    </section>
-    <section id="spec">
-      <h2>Specification</h2>
-      <p>...</p>
-      <section id="data-asset-list">
-        <h3>Data Asset List</h3>
-        <p>A <code>dcat:Catalog</code> consisting of a searchable list of <code>dcat:Dataset</code>s, including their data format and size and the conditions for their re-use.</p>
-        <p>Mandatory properties according to DCAT-AP:</p>
-        <ul>
-          <li><code>dct:title</code>: name of the data asset list.</li>
-          <li><code>dct:description</code>: description of the data asset list and its datasets.</li>
-          <li><code>dct:publisher</code>: <code>SingleInformationPointProvider</code> responsible for making the <code>DataAssetList</code> available.
-            <div class="note">Range of <code>dct:publisher</code> is <code>foaf:Agent</code>, which has <code>foaf:name</code> has a mandatory property.</div>
-          </li>
-        </ul>
-        <p>Other properties:</p>
-        <ul>
-          <li><code>dcat:dataset</code>: link <code>DataAssetList</code> with the <code>dcat:Dataset</code>s that are part of the catalog.</li>
-          <li><code>dct:created</code>: date when the <code>DataAssetList</code> was created.</li>
-        </ul>
-
-        <section id="data-asset">
-          <h3>Data Asset</h3>
-          <p>A <code>dcat:Dataset</code> made available by a <code>PublicSectorBody</code>.</p>
-          <p>Mandatory properties according to DCAT-AP:</p>
-          <ul>
-            <li><code>dct:title</code>: name of the dataset.</li>
-            <li><code>dct:description</code>: description of the dataset.</li>
-          </ul>
-          <p>Mandatory DGA-related properties:</p>
-          <ul>
-            <li><code>dcat:mediaType</code>: format of the dataset.</li>
-            <li><code>dct:extent</code>: size of the dataset.</li>
-            <li><code>odrl:hasPolicy</code>: conditions for the reuse of the dataset.</li>
-          </ul>
-          <p>Other properties:</p>
-          <ul>
-            <li><code>dct:publisher</code>: <code>PublicSectorBody</code> that published the <code>dcat:Dataset</code>.
-            <li><code>dct:created</code>: date when the <code>dcat:Dataset</code> was created.</li>
-            <li><code>hasFee</code>: fee charged by the publisher of the <code>dcat:Dataset</code>.</li>
-            <li><code>dpv:hasData</code>/<code>dpv:hasPersonalData</code>: indicate categories of data or personal data available in the <code>dcat:Dataset</code>.</li>
-          </ul>
-        </section>
-      </section>
-    </section>
-
-    <section id="examples">
-      <h2>Examples</h2>
-      <section id="example-data-asset-list">
-        <h3>Data Asset List example</h3>
-        <div class="example">
-          <pre>
-            ex:SIPPA_assets a :DataAssetList, dcat:Catalog ;
-                dct:title "Asset list maintained by SIPPA" ;
-                dct:description "Asset list maintained by SIPPA" ;
-                dct:publisher ex:SIPPA ;
-                dct:created "2022-12-10"^^xsd:date ; 
-                dcat:dataset ex:dataset_001 .
-            
-            ex:SIPPA a :SingleInformationPointProvider, foaf:Agent ;
-                foaf:name "Single Information Point Provider A" .
-            
-            ex:dataset_001 a dcat:Dataset ;
-                dct:title "Dataset with statistically confidential data" ;
-                dct:description "Dataset with statistically confidential data" ;
-                dcat:mediaType &lt;https://www.iana.org/assignments/media-types/text/csv> ;
-                dct:extent "5.6MB"^^xsd:string ;
-                odrl:hasPolicy ex:policy_001 ;
-                :hasFee "0€"^^xsd:string ;
-                dct:created "2022-12-04"^^xsd:date ;
-                dct:publisher ex:publicsectorbodyX ;              
-                dpv:hasData :StatisticallyConfidentialData .
-            
-            ex:publicsectorbodyX a :PublicSectorBody, foaf:Agent ;
-                foaf:name "Public Sector Body X" ;
-                dpv:hasContact "mailto:publicsectorbodyX@email.com" .
-          </pre>
-        </div>
-      </section>
-    </section>
-  </body>
 </head>
+
+<body>
+  <section id="abstract">
+    <p>
+        In order to address the Data Governance Act's (DGA) new requirements, this work investigates how to apply existing Semantic Web vocabularies, such as the W3C's Data Privacy Vocabulary (DPV), Open Digital Rights Language (ODRL) or Data Catalog Vocabulary (DCAT), to (1) generate machine-readable policies for the reuse of public data, (2) specify data altruism consent terms, and (3) create uniform registries of data altruism organisations and intermediation services' providers as the usage of such technologies promotes machine readability and interoperability. Existing gaps in the representation of terms for such use cases are covered by the proposed DGAterms vocabulary.
+    </p>
+  </section>
+
+  <section id="introduction">
+    <h2>Introduction</h2>
+    <p>DGAterms aims to promote existing specifications and provide a set of additional terms to express DGA-related use-cases in order to:</p>
+    <ul>
+      <li>generate machine-readable policies for the reuse of public data</li>
+      <li>maintain data assets lists of public sector bodies' data</li>
+      <li>specify data altruism consent and permission terms</li>
+      <li>create uniform registers of data altruism organisations and intermediation services' providers</li>
+      <li>record activities of data altruism organisations and intermediation services' providers</li>
+    </ul>
+ </section>
+
+  <section id="vocab">
+    <h2>Vocabulary</h2>
+    <p>DGAterms provides terms based on the Data Governance Act (DGA) to represent policies, notices, records of activities, consent and permission terms and public registers related to the activities of data altruism organisations and data intermediation service providers, as well as public sector bodies and single information point providers.</p>
+    <p>The <a href="#base">Base concepts</a> correspond to the core concepts which currently do not have match any of the taxonomies in the Data Privacy Vocabulary (DPV), such as reuse requests or public registers. In addition, terms related to <a href="#legal-bases">Legal Bases</a> are provided to ground the processing of data in DGA's mandated legal bases.</p>
+    <p>The <a href="#processing">Processing</a> and <a href="#entities">Processing</a> sections describe new processing operations and entities introduced in the DGA. The <a href="#purpose">Purposes</a> can be provided to justify the entities data handling activities, including data altruism.</p>
+    <p>The <a href="#tom">Technical and Organisational Measures</a> and <a href="#data">Processing</a> sections describe new types of technical and organisational measures and data categories introduced in the DGA. The <a href="#standard">Standard</a> and <a href="#risk">Risk and impacts</a> sections include general concepts to represent standards, as well as risks, impacts and consequences introduced in the DGA.</p>
+    <p>The <a href="#service">Service</a> and <a href="#tech">Technology</a> sections describe data intermediation and single information point services and technologies and technology actors. The <a href="#registers">Public registers</a> and <a href="#rights">Rights</a> sections provide terms to represent public registers of entities, including data altruism organisations and intermediation service providers, and rights prescribed by the DGA.</p>
+
+    <section id="base">
+        <h3>Base concepts</h3>
+        <ul>
+            <li><code>DISPEUApproval</code>: Confirmation and approval by a competent authority for the Data Intermediation Service Provider's compliance with Article 11 and Article 12 of the DGA.</li>
+            <li><code>DataReuseRequest</code>: Request for re-use some data.</li>
+            <li><code>PublicRegister</code>: A register containing information which is made publicly available.</li>
+        </ul>
+    </section>
+    
+    <section id="legal-bases">
+        <h3>Legal bases concepts</h3>
+        <ul>
+          <li><code>A12-e</code>: Explicit request or approval of the data subject or data holder to utilise additional specific tools for the purposes of facilitating exchange of data.</li>
+          <li><code>A2-6</code>: The legal basis justfiying processing of non-personal data based on the permission of an entity.</li>
+          <li><code>A31-2</code>: Data Transfer International Agreement.</li>
+          <li><code>A31-3</code>: Data Transfer Third Country Judgement.</li>
+          <li><code>A5-11</code>: Model Contractual Clauses.</li>
+          <li><code>A5-12</code>: Adequacy Decision.</li>
+          <li><code>A5-9</code>: The legal basis justfiying processing of non-personal data based on the permission of an entity to transfer data.</li>
+        </ul>
+    </section>
+
+    <section id="processing">
+        <h3>Processing concepts</h3>
+        <ul>
+            <li><code>Aggregate</code>: Join data from multiple sources.</li>
+            <li><code>ConvertFormat</code>: Convert data from one format to another.</li>
+            <li><code>Display</code>: Show data in an organised way so that it can be seen by the public.</li>
+            <li><code>Download</code>: Copy and receive data from one computer system to another over a network, e.g., over the internet.</li>
+            <li><code>Export</code>: Provide a copy of data from one system to another.</li>
+            <li><code>Reuse</code>: Use of data with a subsequent context i.e. different from its initial context.</li>
+        </ul>
+    </section>
+
+    <section id="entities">
+        <h3>Entity concepts</h3>
+        <ul>
+            <li><code>CharityOrganisation</code>: An organization that supports a cause by fundraising or through donations and charity.</li>
+            <li><code>DataAltruismAuthority</code>: An authority tasked with overseeing the activity of data altruism organisations and maintaining a public register of said entities.</li>
+            <li><code>DataAltruismOrganisation</code>: An non-profit organisation whom collects and shares data for altruistic purposes.</li>
+            <li><code>DataCooperative</code>: An entity constituted by data subjects, one-person undertakings or SMEs who provides data intermediation services and supports its members in the exercise of their data-related rights.</li>
+            <li><code>DataHolder</code>: An entity who has the right to grant access to or to share certain personal data or non-personal data.</li>
+            <li><code>DataIntermediationAuthority</code>: An authority tasked with overseeing the activity of data intermediation service providers and maintaining a public register of said entities.</li>
+            <li><code>DataIntermediationServiceProvider</code>: An entity who establishes commercial relationships for the data sharing between data subjects and data holders on the one hand and data users on the other.</li>
+            <li><code>DataIntermediationServiceProviderForDataHolder</code>: An entity who makes data holders' data available for potential data users, including bilateral or multilateral exchanges of data and platforms and databases for the joint exploitation of data.</li>
+            <li><code>DataIntermediationServiceProviderForDataSubject</code>: An entity who makes data subjects' personal data available for potential data users.</li>
+            <li><code>DataReuseCompetentBody</code>: An entity designated by a public sector body to provide legal and technical support on the access and reuse of public sector data.</li>
+            <li><code>DataUser</code>: An entity who has access an the right to use personal or non-personal data for commercial or non-commercial purposes.</li>
+            <li><code>EUSingleInformationPointProvider</code>: An entity who is responsible for receiving and transmiting requests for the re-use of public data in the EU.</li>
+            <li><code>EuropeanDataInnovationBoard</code>: An authority tasked with overseeing the activities of data intermediation service providers and data altruism organisations.</li>
+            <li><code>LocalSingleInformationPointProvider</code>: A local entity who is responsible for receiving and transmiting requests for the re-use of public data.</li>
+            <li><code>NationalSingleInformationPointProvider</code>: A national entity who is responsible for receiving and transmiting requests for the re-use of public data.</li>
+            <li><code>PrivateSectorBody</code>: Private Sector Body.</li>
+            <li><code>PublicSectorBody</code>: An entity or association of entities governed by public law formed by one or more State, regional or local authorities.</li>
+            <li><code>RegionalSingleInformationPointProvider</code>: A regional entity who is responsible for receiving and transmiting requests for the re-use of public data.</li>
+            <li><code>SMEOrganisation</code>: Organisations with a low number of employees.</li>
+            <li><code>SectorialSingleInformationPointProvider</code>: An entity who is responsible for receiving and transmiting requests for the re-use of public data for a particular sector.</li>
+            <li><code>SingleInformationPointProvider</code>: An entity who is responsible for receiving and transmiting requests for the re-use of public data.</li>
+            <li><code>StartupOrganisation</code>: Newly established organisation.</li>
+        </ul>
+    </section>
+
+    <section id="purpose">
+        <h3>Purpose concepts</h3>
+        <ul>
+            <li><code>CombatClimateChange</code>: Purposes associated with combating the causes and consequences of climate change, including reducing gas emissions and fighting emergencies such as floods or wildfires.</li>
+            <li><code>CommercialPurpose</code>: Purposes associated with processing activities performed in a commercial setting or with intention to commercialise.</li>
+            <li><code>DataAltruism</code>: Purposes associated with the voluntary sharing of data for the general interest of the public, such as healthcare or combating climate change.</li>
+            <li><code>EnhanceDataInteroperability</code>: Enhance the interoperability of the data.</li>
+            <li><code>EnsureDataHarmonisationWithStandards</code>: Ensure harmonisation of data with standards.</li>
+            <li><code>ExchangeViewsOnDataProcessing</code>: Supporting inviduals and entities in exchanging views on data processing purposes and relevant information.</li>
+            <li><code>FacilitateDataExchange</code>: Facilitate exchange of data.</li>
+            <li><code>ImproveHealthcare</code>: Purposes associated with improving the public healthcare systems across the Member States, including improving personalised treatments and helping cure chronic diseases.</li>
+            <li><code>ImprovePublicServices</code>: Purposes associated with improving the provision of public services, such as public safety, education or law enforcement.</li>
+            <li><code>ImproveTransportMobility</code>: Purposes associated with improving traffic, public transport systems or costs for drivers.</li>
+            <li><code>MisusePreventionAndDetection</code>: Prevention and Detection of Misuse or Abuse of services.</li>
+            <li><code>NegotiateContractualAgreements</code>: Negotiate contractual agreements regarding processing of data and other matters, including terms and conditions.</li>
+            <li><code>NonCommercialPurpose</code>: Purposes associated with processing activities performed in a non-commercial setting or without intention to commercialise.</li>
+            <li><code>ProtectionOfIPR</code>: Purposes associated with the protection of intellectual property rights.</li>
+            <li><code>ProtectionOfNationalSecurity</code>: Purposes associated with the protection of national security.</li>
+            <li><code>ProtectionOfPublicSecurity</code>: Purposes associated with the protection of public security.</li>
+            <li><code>ProvideOfficialStatistics</code>: Purposes associated with facilitating the development, production and dissemination of reliable official statistics.</li>
+            <li><code>PublicPolicyMaking</code>: Purposes associated with public policy making, such as the development of new laws.</li>
+            <li><code>ScientificResearch</code>: Purposes associated with scientific research.</li>
+            <li><code>SupportInformedConsentChoices</code>: Supporting individuals in understanding and making choices with respect to informed consent.</li>
+        </ul>
+    </section>
+
+    <section id="tom">
+        <h3>TOM concepts</h3>
+        <p><strong>Technical measures</strong></p>
+        <ul>
+            <li><code>ConsentManagementTool</code>: Technical tools to manage consent.</li>
+            <li><code>DataExchangeMethod</code>: Methods to facilitate the exchange of data.</li>
+            <li><code>EuropeanDataAltruismConsentForm</code>: A form provided by the European Commission for collecting consent.</li>
+            <li><code>PermissionManagementTool</code>: Technical tools to manage permissions.</li>
+        </ul>
+        
+        <p><strong>Organisational measures</strong></p>
+        <ul>
+            <li><code>CommercialConfidentialityAgreement</code>: Agreements that enforce commercial confidentiality including business, professional and company secrets.</li>
+            <li><code>ConsentManagement</code>: Methods to obtain and withdraw consent or permission to process data.</li>
+            <li><code>DataAltruismAnnualActivityReport</code>: Document containing the annual activities reported by a Data Altruism organisation.</li>
+            <li><code>DataAltruismNotice</code>: Notice providing information regarding the processing of data for data altruistic purposes.</li>
+            <li><code>DataAssetList</code>: Searchable asset list which contains available data resources including their data format and size and the conditions for their re-use.</li>
+            <li><code>DataBreachNotification</code>: Notification information a data breach or unauthorised transfer, access, use, or modification of data.</li>
+            <li><code>DataIntermediationServiceNotification</code>: Notification by a Data Intermediation Service Provider to a competent authority concerning changes to details regarding its Data Intermediation Service.</li>
+            <li><code>DataReusePolicy</code>: A Policy to govern data re-use.</li>
+            <li><code>DataReuseRequestProcedure</code>: Procedure to request data for reuse via single information point.</li>
+            <li><code>DataSubjectRightsManagement</code>: Methods to facilitate the exercising of data subjects' rights.</li>
+            <li><code>DataTransferNotice</code>: Notice for the legal entity for the transfer of its data.</li>
+            <li><code>EnforceTransferControl</code>: Purposes associated with conducting or enforcing transfer control so as to limit the transfer of data.</li>
+            <li><code>IntellectualPropertyRightsManagement</code>: Management of Intellectual Property Rights with a view to identify and safeguard and enforce them.</li>
+            <li><code>LegalMeasure</code>: Legally-recognised agreements, e.g., contracts.</li>
+            <li><code>License</code>: Document which states the conditions for usage of data.</li>
+            <li><code>NationalDataAltruismPolicy</code>: A Policy established at National level regarding Data Altruism.</li>
+            <li><code>PermissionManagement</code>: Methods to obtain and withdraw consent or permission to process data.</li>
+            <li><code>PersonalDataReuseNotice</code>: Notice for data subjects to provide consent based on information and advise regarding intended use of data, exercise of rights, and applicable terms and conditions.</li>
+            <li><code>RegisterOfDataIAltruismActivity</code>: Document that logs the activity of the data altruism organisation.</li>
+            <li><code>RegisterOfDataIntermediationActivity</code>: Document that logs the activity of the data intermediation service provider.</li>
+            <li><code>StatisticalConfidentialityAgreement</code>: Agreements that enforce statistical confidentiality.</li>
+            <li><code>ThirdCountryDataRequestNotice</code>: Notice regarding a data request for the transfer of data to a third country recipient.</li>
+        </ul>
+    </section>
+
+    <section id="data">
+        <h3>Data concepts</h3>
+        <ul>
+            <li><code>CommerciallyConfidentialData</code>: Data protected through Commercial Confidentiality Agreements.</li>
+            <li><code>ConfidentialData</code>: Data protected through Confidentiality Agreements.</li>\
+            <li><code>IntellectualPropertyProtectedData</code>: Data protected through Intellectual Property.</li>
+            <li><code>SensitiveData</code>: Sensitive data.</li>
+            <li><code>SensitiveNonPersonalData</code>: Sensitive non-personal data.</li>
+            <li><code>StatisticallyConfidentialData</code>: Data protected through Statistical Confidentiality Agreements.</li>
+        </ul>
+    </section>
+
+    <section id="standard">
+        <h3>Standard concepts</h3>
+        <ul>
+            <li><code>CommonlyUsedOpenStandard</code>: Commonly used and openly accessible standard.</li>
+            <li><code>CommonlyUsedStandard</code>: Commonly used standard.</li>
+            <li><code>InternationalStandard</code>: Internationally recognised standard.</li>
+            <li><code>OpenStandard</code>: Openly accessible standard.</li>
+            <li><code>Standard</code>: Standard.</li>
+        </ul>
+    </section>
+
+    <section id="risk">
+        <h3>Risk and impact concepts</h3>
+        <ul>
+            <li><code>Compensation</code>: Compensation provided as a benefit.</li>
+            <li><code>Fee</code>: Fee charged by an entity to provide a service.</li>
+            <li><code>Reward</code>: Reward provided as a benefit.</li>
+            <li><code>RiskOfReIdentification</code>: Risk of Re-identification.</li>
+        </ul>
+    </section>
+
+    <section id="service">
+        <h3>Service concepts</h3>
+        <ul>
+            <li><code>DataCooperativeService</code>: Service provided by a data cooperative.</li>
+            <li><code>DataIntermediationService</code>: Service of data intermediation which aims to facilitate the sharing of data between Data Subjects, Data Holders and Data Users.</li>
+            <li><code>DataIntermediationServiceBetweenHoldersUsers</code>: Data intermediation service for data shared between Data Holders and Data Users.</li>
+            <li><code>DataIntermediationServiceBetweenSubjectsUsers</code>: Data intermediation service for data shared between Data Subjects, Natural Persons who are Data Holders and Data Users.</li>
+            <li><code>SingleInformationPoint</code>: Service responsible for receiving and transmiting requests for the re-use of public data.</li>
+        </ul>
+    </section>
+
+    <section id="tech">
+        <h3>Technology concepts</h3>
+        <ul>
+            <li><code>DataIntermediationTechnology</code>: Technology related to the provision of data intermediation services.</li>
+            <li><code>SecureProcessingEnvironment</code>: Physical or virtual environment to ensure compliance with EU law.</li>
+            <li><code>TechnologyDesigner</code>: Actor that designs Technology.</li>
+            <li><code>TechnologyInstaller</code>: Actor that installs Technology.</li>
+            <li><code>TechnologyMaintainer</code>: Actor that maintains Technology.</li>
+            <li><code>TechnologyManufacturer</code>: Actor that manufactures Technology.</li>
+            <li><code>TechnologyOwner</code>: Actor that owns Technology.</li>
+            <li><code>TechnologyPurchaser</code>: Actor that purchases Technology.</li>
+            <li><code>TechnologySupplier</code>: Actor that supplies Technology.</li>
+            <li><code>TechnologyUser</code>: Actor that uses Technology.</li>
+        </ul>
+    </section>
+
+    <section id="registers">
+        <h3>Public register concepts</h3>
+        <ul>
+            <li><code>EURegisterOfDataAltruismOrganisations</code>: Register maintained by EU containing list of recognised data altruism organisations.</li>
+            <li><code>NationalRegisterOfDataAltruismOrganisations</code>: Register maintained at National level containing list of recognised data altruism organisations.</li>
+            <li><code>RegisterOfDataAltruismOrganisations</code>: Register containing list of recognised data altruism organisations.</li>
+            <li><code>RegisterOfDataIntermediationServiceProviders</code>: Register containing a publicly available list of data intermediation service providers.</li>
+            <li><code>RegisterOfEntities</code>: Register containing a publicly available list of entities that perform a certain activity within a certain location or jurisdiction.</li>
+        </ul>
+    </section>
+
+    <section id="rights">
+        <h3>Right concepts</h3>
+        <ul>
+            <li><code>RightToDataConversionOptOut</code>: Right of data subjects and data holders to opt-out of data conversions e.g. enhance interoperability or harmonisation with standards.</li>
+            <li><code>RightToImpartialBodyReview</code>: Right of data subjects and data holders to get an review by an impartial body with the appropriate expertise.</li>
+            <li><code>RightToLodgeComplaint</code>: Right of data subjects and data holders to lodge a complaint.</li>
+        </ul>
+    </section>
+
+  </section>
+
+  <section id="using-dgaterms">
+    <h2>Using DGAterms</h2>
+    
+    <p>In this Section, we use DGAterms as well as other W3C standards and specifications, such as W3C's ODRL, DCAT and DPV, to create Linked Data versions of policies, consent and permission terms, public registers and records of activities.</p>
+
+    <section id="data-reuse-policy">
+      <h3>Data reuse policy</h3>
+    </section>
+
+    <blockquote>ODRL Offer policy set by the Public Sector Body X that permits the re-use of a dataset until the end of 2023 for scientific research.</blockquote>
+    <div class="example">
+      <pre>
+ex:policy_001 a odrl:Offer, dgaterms:DataReusePolicy ;
+    odrl:uid ex:policy_001 ;
+    odrl:permission [
+        odrl:target ex:dataset_001 ;
+        odrl:action dgaterms:Reuse ;
+        odrl:assigner ex:publicsectorbodyX ;
+        odrl:constraint [
+            odrl:and [
+                odrl:leftOperand odrl:dateTime ;
+                odrl:operator odrl:lteq ;
+                odrl:rightOperand "2023-12-31"^^xsd:date
+            ], [
+                odrl:leftOperand odrl:purpose ;
+                odrl:operator odrl:isA ;
+                odrl:rightOperand dgaterms:ScientificResearch 
+            ]
+        ]
+    ] .
+    
+ex:publicsectorbodyX a dgaterms:PublicSectorBody ;
+    dpv:hasName "Public Sector Body X" ;
+    dpv:hasContact "mailto:publicsectorbodyX@email.com" ;
+    dgaterms:hasCompetentBody [
+        a dgaterms:DataReuseCompetentBody ;
+        dpv:hasName "Competent Body X" ;
+        dpv:hasContact "mailto:competentbodyX@email.com"
+    ] .
+      </pre>
+    </div>
+
+    <section id="data-asset-list">
+      <h3>Data asset list</h3>
+    </section>
+
+    <blockquote>Data asset list maintained by the Single Information Point Provider A.</blockquote>
+     <div class="example">
+      <pre>
+ex:SIPPA_assets a dgaterms:DataAssetList, dcat:Catalog ;
+    dcterms:description "Asset list maintained by SIPPA" ;
+    dcterms:created "2022-12-10"^^xsd:date ;
+    dcterms:publisher ex:SIPPA ; 
+    dcat:dataset ex:dataset_001 .
+
+ex:SIPPA a dgaterms:SingleInformationPointProvider .
+
+ex:dataset_001 a dgaterms:StatisticallyConfidentialData ;
+    dcterms:description "Dataset with statistically confidential data" ;
+    dcterms:created "2022-12-04"^^xsd:date ;
+    dcterms:publisher ex:publicsectorbodyX ;
+    odrl:hasPolicy ex:policy_001 ;
+    dgaterms:hasFee "0€"^^xsd:string ;
+    dcat:mediaType &lt;iana.org/assignments/media-types/text/csv> ;
+    dcterms:extent "5.6MB"^^xsd:string .
+      </pre>
+    </div>
+
+    <section id="data-intermediation-register">
+      <h3>Public register of data intermediation service providers</h3>
+    </section>
+
+    <blockquote>Example of a public register of data intermediation service providers.</blockquote>
+    <div class="example">
+      <pre>
+ex:publicregistry_DI_PT a dgaterms:RegisterOfDataIntermediationServiceProviders ;
+    dcterms:description "Public register of intermediaries working in PT" ;
+    dcterms:created "2023-12-15"^^xsd:date ; 
+    dcterms:modified "2023-12-23"^^xsd:date ;
+    dcterms:publisher ex:nationalauthority_PT ;
+    dgaterms:hasDataIntermediationServiceProvider ex:DISP_Y .
+
+ex:nationalauthority_PT a dgaterms:DataIntermediationAuthority ;
+    dpv:hasName "Data Intermediation Authority of Portugal" ;
+    dpv:hasContact "mailto:nationalauthority_PT@email.com" ;
+    dpv:hasJurisdiction "PT" .
+
+ex:DISP_Y a dgaterms:DataCooperative ;
+    dpv:hasName "Data Cooperative Y" ; 
+    dpv:hasAddress "Lisboa, Portugal" ;
+    dcterms:description "Provider of anonymised geolocation data" ;
+    dcat:landingPage &lt;http://cooperativeA.com/> ;
+    dcterms:date "2023-12-23"^^xsd:date .
+      </pre>
+    </div>
+
+    <section id="altruism-logs">
+      <h3>Data altruism activity logs</h3>
+    </section>
+
+    <blockquote>Example of a register of data altruism activity logs.</blockquote>
+    <div class="example">
+      <pre>
+ex:altruism_logs a dgaterms:RegisterOfDataIAltruismActivity ;
+    dcterms:description "Activity logs of the Data Altruism Organisation A" ;
+    dcterms:created "2023-11-04"^^xsd:date ; 
+    dcterms:modified "2023-11-13"^^xsd:date ;
+    dcterms:publisher ex:altruism_A ; 
+    dgaterms:hasActivityLogs ex:log_001 .
+
+ex:altruism_A a dgaterms:DataAltruismOrganisation ;
+    dpv:hasName "Data Altruism Organisation A" ;
+    dpv:hasAddress "Lisboa, Portugal" ;
+    dcat:landingPage &lt;http://example.com/altruism_A> .
+
+ex:log_001 a dgaterms:AltruismActivityLog ;
+    dcterms:created "2023-11-13"^^xsd:date ;
+    dgaterms:hasDataUser ex:userZ ; 
+    dgaterms:hasFee "1000€"^^xsd:string ;
+    dpv:hasPersonalDataHandling [
+        dcterms:description "Download and reuse anonymised health records to improve healthcare" ;
+        dpv:hasDuration 6226453 ;
+        dpv:hasPurpose dgaterms:DataAltruism, dgaterms:ImproveHealthcare ;
+        dpv:hasProcessing dgaterms:Download, dgaterms:Reuse ;
+        dpv:hasPersonalData pd:HealthRecord ;
+        dpv:hasTechnicalMeasure dpv:Anonymisation
+    ] .
+
+ex:userZ a dgaterms:DataUser ; 
+    dpv:hasName "Data User Z" ;
+    dpv:hasContact "mailto:user_z@email.com" .
+      </pre>
+    </div>
+
+    <section id="altruism-consent">
+      <h3>Altruism consent terms</h3>
+    </section>
+
+    <blockquote>Data altruism form where data subject Anne consents to the usage of their location data for the altruistic purpose of improving mobility.</blockquote>
+    <div class="example">
+      <pre>
+ex:consentForm_001 a dgaterms:EuropeanDataAltruismConsentForm ;
+    dpv:hasIdentifier &lt;http://example.com/consentForm_001> ;
+    dpv:hasDataSubject ex:Anne ; 
+    dpv:isIndicatedBy ex:Anne ;
+    dpv:isIndicatedAtTime "2022-12-14" ;
+    dpv:hasPersonalDataHandling [
+        dpv:hasPurpose dgaterms:DataAltruism, dgaterms:ImproveTransportMobility ;
+        dpv:hasLegalBasis eu-gdpr:A6-1-a ;
+        dpv:hasPersonalData pd:Location ;
+        dpv:hasProcessing dpv:Use, dpv:Store ;
+        dpv:hasDataController [
+            a dpv:DataController, dgaterms:DataAltruismOrganisation ;
+            dpv:hasName "Company A" ] ] .
+      </pre>
+    </div>
+
+    <section id="altruism-permission">
+      <h3>Altruism permission terms</h3>
+    </section>
+
+    <blockquote>Permission for data altruism where data holder A allows the usage of their anonymised data for the altruistic purpose of providing official statistics.</blockquote>
+    <div class="example">
+      <pre>
+ex:permissionForm_001 a dpv:Permission ;
+    dpv:hasIdentifier &lt;http://example.com/permissionForm_001> ;
+    dgaterms:hasDataHolder ex:dataHolderA ; 
+    dpv:isIndicatedBy ex:dataHolderA ;
+    dpv:isIndicatedAtTime "2022-12-15" ;
+    dpv:hasPersonalDataHandling [
+        dpv:hasPurpose dgaterms:DataAltruism, dgaterms:ProvideOfficialStatistics ;
+        dpv:hasLegalBasis dgaterms:A2-6 ; 
+        dpv:hasData dpv:AnonymisedData ;
+        dpv:hasProcessing dpv:Use, dpv:Store ;
+        dpv:hasDataController [
+            a dpv:DataController, dgaterms:DataAltruismOrganisation ;
+            dpv:hasName "Company A" ] ] .
+      </pre>
+    </div>
+
+  </section>
+
+</body>
+</html>

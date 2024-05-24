@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DGA DCAT-AP spec</title>
+  <meta http-equiv='Content-Type' content='text/html;charset=utf-8' />
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
+  <script type="text/javascript" class="remove">
+    var respecConfig = {
+      title: "DGA DCAT-AP spec",
+      subtitle: "DGA DCAT-AP spec",
+      shortName: "dga dcat-ap",
+      specStatus: "unofficial",
+      latestVersion: "https://besteves4.github.io/dgaterms/",
+      publishDate: "2023-07-05",
+      doJsonLd: true,
+      maxToclevel: 3,
+      github: "besteves4/dgaterms",
+      includePermalinks: false,
+      editors: [
+        {
+          name: "Beatriz Esteves",
+          url: "https://besteves4.github.io/",
+          company: "OEG, Universidad Politécnica de Madrid",
+          companyURL: "https://oeg.fi.upm.es/"
+        },
+        {
+          name: "Harshvardhan J. Pandit",
+          url: "v",
+          company: "ADAPT Centre, Dublin City University",
+          companyURL: "http://dcu.ie/"
+        }]
+    };
+  </script>
+
+  <body>
+    <section id="abstract">
+      <p>DCAT-AP specification for DGA datasets and registers</p>
+    </section>
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>...</p>
+    </section>
+    <section id="spec">
+      <h2>Specification</h2>
+      <p>...</p>
+      <section id="data-asset-list">
+        <h3>Data Asset List</h3>
+        <p>A <code>dcat:Catalog</code> consisting of a searchable list of <code>dcat:Dataset</code>s, including their data format and size and the conditions for their re-use.</p>
+        <p>Mandatory properties according to DCAT-AP:</p>
+        <ul>
+          <li><code>dct:title</code>: name of the data asset list.</li>
+          <li><code>dct:description</code>: description of the data asset list and its datasets.</li>
+          <li><code>dct:publisher</code>: <code>SingleInformationPointProvider</code> responsible for making the <code>DataAssetList</code> available.
+            <div class="note">Range of <code>dct:publisher</code> is <code>foaf:Agent</code>, which has <code>foaf:name</code> has a mandatory property.</div>
+          </li>
+        </ul>
+        <p>Other properties:</p>
+        <ul>
+          <li><code>dcat:dataset</code>: link <code>DataAssetList</code> with the <code>dcat:Dataset</code>s that are part of the catalog.</li>
+          <li><code>dct:created</code>: date when the <code>DataAssetList</code> was created.</li>
+        </ul>
+
+        <section id="data-asset">
+          <h3>Data Asset</h3>
+          <p>A <code>dcat:Dataset</code> made available by a <code>PublicSectorBody</code>.</p>
+          <p>Mandatory properties according to DCAT-AP:</p>
+          <ul>
+            <li><code>dct:title</code>: name of the dataset.</li>
+            <li><code>dct:description</code>: description of the dataset.</li>
+          </ul>
+          <p>Mandatory DGA-related properties:</p>
+          <ul>
+            <li><code>dcat:mediaType</code>: format of the dataset.</li>
+            <li><code>dct:extent</code>: size of the dataset.</li>
+            <li><code>odrl:hasPolicy</code>: conditions for the reuse of the dataset.</li>
+          </ul>
+          <p>Other properties:</p>
+          <ul>
+            <li><code>dct:publisher</code>: <code>PublicSectorBody</code> that published the <code>dcat:Dataset</code>.
+            <li><code>dct:created</code>: date when the <code>dcat:Dataset</code> was created.</li>
+            <li><code>hasFee</code>: fee charged by the publisher of the <code>dcat:Dataset</code>.</li>
+            <li><code>dpv:hasData</code>/<code>dpv:hasPersonalData</code>: indicate categories of data or personal data available in the <code>dcat:Dataset</code>.</li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section id="examples">
+      <h2>Examples</h2>
+      <section id="example-data-asset-list">
+        <h3>Data Asset List example</h3>
+        <div class="example">
+          <pre>
+            ex:SIPPA_assets a :DataAssetList, dcat:Catalog ;
+                dct:title "Asset list maintained by SIPPA" ;
+                dct:description "Asset list maintained by SIPPA" ;
+                dct:publisher ex:SIPPA ;
+                dct:created "2022-12-10"^^xsd:date ; 
+                dcat:dataset ex:dataset_001 .
+            
+            ex:SIPPA a :SingleInformationPointProvider, foaf:Agent ;
+                foaf:name "Single Information Point Provider A" .
+            
+            ex:dataset_001 a dcat:Dataset ;
+                dct:title "Dataset with statistically confidential data" ;
+                dct:description "Dataset with statistically confidential data" ;
+                dcat:mediaType &lt;https://www.iana.org/assignments/media-types/text/csv> ;
+                dct:extent "5.6MB"^^xsd:string ;
+                odrl:hasPolicy ex:policy_001 ;
+                :hasFee "0€"^^xsd:string ;
+                dct:created "2022-12-04"^^xsd:date ;
+                dct:publisher ex:publicsectorbodyX ;              
+                dpv:hasData :StatisticallyConfidentialData .
+            
+            ex:publicsectorbodyX a :PublicSectorBody, foaf:Agent ;
+                foaf:name "Public Sector Body X" ;
+                dpv:hasContact "mailto:publicsectorbodyX@email.com" .
+          </pre>
+        </div>
+      </section>
+    </section>
+  </body>
+</head>

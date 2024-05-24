@@ -1,12 +1,18 @@
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix dgaterms: <https://w3id.org/dgaterms#> .
 @prefix dpv: <https://w3id.org/dpv#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix tech: <https://w3id.org/dpv/tech#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix dgaterms: <https://w3id.org/dgaterms#> .
 
 # ---------------- Ontology Metadata ------------------ #
 
@@ -127,7 +133,7 @@ dgaterms:Compensation a rdfs:Class ;
 dgaterms:ConfidentialData a rdfs:Class ;
     rdfs:label "Confidential Data" ;
     rdfs:subClassOf dpv:Data ;
-    skos:definition "Confidential Data" .
+    skos:definition "Data protected through Confidentiality Agreements" .
 
 dgaterms:ConsentManagement a rdfs:Class ;
     rdfs:label "Consent Management" ;
@@ -188,7 +194,7 @@ dgaterms:DataAssetList a rdfs:Class ;
     rdfs:label "Data Asset List" ;
     dcterms:source "DGA 8.2" ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
-    skos:definition "Searchable asset list which contains available data resources including their data format and size and the conditions for theirÂ re-use" .
+    skos:definition "Searchable asset list which contains available data resources including their data format and size and the conditions for their re-use" .
 
 dgaterms:DataBreachNotification a rdfs:Class ;
     rdfs:label "Data Breach Notification" ;
@@ -305,7 +311,7 @@ dgaterms:DataTransferNotice a rdfs:Class ;
     rdfs:label "Data Transfer Notice" ;
     dcterms:source "DGA 5.9" ;
     rdfs:subClassOf dpv:Notice ;
-    skos:definition "Notice for the legal entity for the transfer of its data " .
+    skos:definition "Notice for the legal entity for the transfer of its data" .
 
 dgaterms:DataUser a rdfs:Class ;
     rdfs:label "Data User" ;
@@ -330,7 +336,7 @@ dgaterms:EURegisterOfDataAltruismOrganisations a rdfs:Class ;
     rdfs:label "EU's Public Register of Data Altruism Organisations" ;
     dcterms:source "DGA 19.5" ;
     rdfs:subClassOf dgaterms:PublicRegister ;
-    skos:definition "Registry maintained by EU containing list of recognised data altruism organisations" .
+    skos:definition "Register maintained by EU containing list of recognised data altruism organisations" .
 
 dgaterms:EUSingleInformationPointProvider a rdfs:Class ;
     rdfs:label "EU Single Information Point Provider" ;
@@ -353,7 +359,7 @@ dgaterms:EnsureDataHarmonisationWithStandards a rdfs:Class ;
     rdfs:label "Ensure Data Harmonisation with Standards" ;
     dcterms:source "DGA 12.d" ;
     rdfs:subClassOf dpv:Purpose ;
-    skos:definition "Enhance harmonisation of data with standards" .
+    skos:definition "Ensure harmonisation of data with standards" .
 
 dgaterms:EuropeanDataAltruismConsentForm a rdfs:Class ;
     rdfs:label "European Data Altruism Consent Form" ;
@@ -385,10 +391,10 @@ dgaterms:FacilitateDataExchange a rdfs:Class ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Facilitate exchange of data" .
 
-dgaterms:Fees a rdfs:Class ;
-    rdfs:label "Fees" ;
+dgaterms:Fee a rdfs:Class ;
+    rdfs:label "Fee" ;
     dcterms:source "DGA 2.10" ;
-    rdfs:subClassOf dpv:Concept ;
+    rdfs:subClassOf dgaterms:Compensation ;
     skos:definition "Fee charged by an entity to provide a service" .
 
 dgaterms:ImproveHealthcare a rdfs:Class ;
@@ -409,8 +415,8 @@ dgaterms:ImproveTransportMobility a rdfs:Class ;
     rdfs:subClassOf dpv:Purpose ;
     skos:definition "Purposes associated with improving traffic, public transport systems or costs for drivers" .
 
-dgaterms:IntellectualProperty a rdfs:Class ;
-    rdfs:label "Intellectual Property" ;
+dgaterms:IntellectualPropertyProtectedData a rdfs:Class ;
+    rdfs:label "Intellectual Property Protected Data" ;
     rdfs:subClassOf dpv:Data ;
     skos:definition "Data protected through Intellectual Property" .
 
@@ -431,8 +437,8 @@ dgaterms:LegalMeasure a rdfs:Class ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     skos:definition "Legally-recognised agreements, e.g., contracts" .
 
-dgaterms:Licence a rdfs:Class ;
-    rdfs:label "Licence" ;
+dgaterms:License a rdfs:Class ;
+    rdfs:label "License" ;
     dcterms:source "DGA 2.10" ;
     rdfs:seeAlso odrl:Offer ;
     rdfs:subClassOf dpv:ContractualTerms ;
@@ -458,7 +464,7 @@ dgaterms:NationalRegisterOfDataAltruismOrganisations a rdfs:Class ;
     rdfs:label "National Public Register of Data Altruism Organisations" ;
     dcterms:source "DGA 19.6" ;
     rdfs:subClassOf dgaterms:PublicRegister ;
-    skos:definition "Registry maintained at National level containing list of recognised data altruism organisations" .
+    skos:definition "Register maintained at National level containing list of recognised data altruism organisations" .
 
 dgaterms:NationalSingleInformationPointProvider a rdfs:Class ;
     rdfs:label "National Single Information Point Provider" ;
@@ -551,7 +557,7 @@ dgaterms:RegisterOfDataAltruismOrganisations a rdfs:Class ;
     rdfs:label "Public Register of Data Altruism Organisations" ;
     dcterms:source "DGA 19.5" ;
     rdfs:subClassOf dgaterms:PublicRegister ;
-    skos:definition "Registry containing list of recognised data altruism organisations" .
+    skos:definition "Register containing list of recognised data altruism organisations" .
 
 dgaterms:RegisterOfDataIAltruismActivity a rdfs:Class ;
     rdfs:label "Register of Data Altruism Activity" ;
@@ -569,12 +575,12 @@ dgaterms:RegisterOfDataIntermediationServiceProviders a rdfs:Class ;
     rdfs:label "Public Register of Data Intermediation Service Providers" ;
     dcterms:source "DGA 11.10" ;
     rdfs:subClassOf dgaterms:PublicRegister ;
-    skos:definition "Document that contains a publicly available list of data intermediation service providers" .
+    skos:definition "Register containing a publicly available list of data intermediation service providers" .
 
 dgaterms:RegisterOfEntities a rdfs:Class ;
     rdfs:label "Public Register of Entities" ;
     rdfs:subClassOf dgaterms:PublicRegister ;
-    skos:definition "Document that contains a publicly available list of entities that perform a certain activity within a certain location or jurisdiction" .
+    skos:definition "Register containing a publicly available list of entities that perform a certain activity within a certain location or jurisdiction" .
 
 dgaterms:Reuse a rdfs:Class ;
     rdfs:label "Reuse" ;
@@ -585,7 +591,7 @@ dgaterms:Reuse a rdfs:Class ;
 dgaterms:Reward a rdfs:Class ;
     rdfs:label "Reward" ;
     rdfs:subClassOf dpv:Benefit ;
-    skos:definition "Reward" .
+    skos:definition "Reward provided as a benefit" .
 
 dgaterms:RightToDataConversionOptOut a rdfs:Class ;
     rdfs:label "Right to Data Conversion Opt-out" ;
@@ -667,7 +673,7 @@ dgaterms:StatisticalConfidentialityAgreement a rdfs:Class ;
     rdfs:label "Statistical Confidentiality Agreement" ;
     dcterms:source "DGA 3.1.b" ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
-    skos:definition "Agreements that enforce statistical confidentiality " .
+    skos:definition "Agreements that enforce statistical confidentiality" .
 
 dgaterms:StatisticallyConfidentialData a rdfs:Class ;
     rdfs:label "Statistically Confidential Data" ;
@@ -684,7 +690,7 @@ dgaterms:TechnologyDesigner a rdfs:Class ;
     rdfs:label "Technology Designer" ;
     dcterms:source "DGA 26.3" ;
     rdfs:subClassOf tech:TechnologyActor ;
-    skos:definition "Actor that designsTechnology" .
+    skos:definition "Actor that designs Technology" .
 
 dgaterms:TechnologyInstaller a rdfs:Class ;
     rdfs:label "Technology Installer" ;
@@ -726,7 +732,7 @@ dgaterms:TechnologyUser a rdfs:Class ;
     rdfs:label "Technology User" ;
     dcterms:source "DGA 26.3" ;
     rdfs:subClassOf tech:TechnologyActor ;
-    skos:definition "" .
+    skos:definition "Actor that uses Technology" .
 
 dgaterms:ThirdCountryDataRequestNotice a rdfs:Class ;
     rdfs:label "Third Country Data Request Notice" ;

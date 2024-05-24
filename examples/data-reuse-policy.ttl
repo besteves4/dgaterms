@@ -1,16 +1,17 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
-PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX dpv: <https://w3id.org/dpv#>
-PREFIX dpv-pd: <https://w3id.org/dpv/dpv-pd#>
-PREFIX dpv-gdpr: <https://w3id.org/dpv/dpv-gdpr#>
+PREFIX pd: <https://w3id.org/dpv/pd#>
+PREFIX eu-gdpr: <https://w3id.org/dpv/legal/eu/gdpr#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX ex: <http://example.com/>
-PREFIX : <http://anon/dgaterms#>
+PREFIX : <https://w3id.org/dgaterms#>
 
 ex:policy_001 a odrl:Offer, :DataReusePolicy ;
+    odrl:uid ex:policy_001 ;
     odrl:permission [
         odrl:target ex:dataset_001 ;
         odrl:action :Reuse ;

@@ -1,27 +1,28 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
-PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX dpv: <https://w3id.org/dpv#>
-PREFIX dpv-pd: <https://w3id.org/dpv/dpv-pd#>
-PREFIX dpv-gdpr: <https://w3id.org/dpv/dpv-gdpr#>
+PREFIX pd: <https://w3id.org/dpv/pd#>
+PREFIX eu-gdpr: <https://w3id.org/dpv/legal/eu/gdpr#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX ex: <http://example.com/>
-PREFIX : <http://anon/dgaterms#>
+PREFIX : <https://w3id.org/dgaterms#>
 
 ex:SIPPA_assets a :DataAssetList ;
-    dct:description "Asset list maintained by SIPPA" ;
-    dct:created "2022-12-10"^^xsd:date ;
-    dct:publisher ex:SIPPA ; 
+    dcterms:description "Asset list maintained by SIPPA" ;
+    dcterms:created "2022-12-10"^^xsd:date ;
+    dcterms:publisher ex:SIPPA ; 
     dcat:dataset ex:dataset_001 .
 
 ex:SIPPA a :SingleInformationPointProvider .
 
 ex:dataset_001 a :StatisticallyConfidentialData ;
-    dct:description "Dataset with statistically confidential data" ;
-    dct:created "2022-12-04"^^xsd:date ;
-    dct:publisher ex:publicsectorbodyX ;
+    dcterms:description "Dataset with statistically confidential data" ;
+    dcterms:created "2022-12-04"^^xsd:date ;
+    dcterms:publisher ex:publicsectorbodyX ;
     odrl:hasPolicy ex:policy_001 ;
     :hasFee "0€"^^xsd:string ;
     dcat:mediaType <iana.org/assignments/media-types/text/csv> ;
-    dct:extent "5.6MB"^^xsd:string .
+    dcterms:extent "5.6MB"^^xsd:string .

@@ -1,20 +1,20 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
-PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX dpv: <https://w3id.org/dpv#>
-PREFIX dpv-pd: <https://w3id.org/dpv/dpv-pd#>
-PREFIX dpv-gdpr: <https://w3id.org/dpv/dpv-gdpr#>
+PREFIX pd: <https://w3id.org/dpv/pd#>
+PREFIX eu-gdpr: <https://w3id.org/dpv/legal/eu/gdpr#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX ex: <http://example.com/>
-PREFIX : <http://anon/dgaterms#>
+PREFIX : <https://w3id.org/dgaterms#>
 
 ex:altruism_logs a :RegisterOfDataIAltruismActivity ;
-    dct:description "Activity logs of the Data Altruism Organisation A" ;
-    dct:created "2023-11-04"^^xsd:date ; 
-    dct:modified "2023-11-13"^^xsd:date ;
-    dct:publisher ex:altruism_A ; 
+    dcterms:description "Activity logs of the Data Altruism Organisation A" ;
+    dcterms:created "2023-11-04"^^xsd:date ; 
+    dcterms:modified "2023-11-13"^^xsd:date ;
+    dcterms:publisher ex:altruism_A ; 
     :hasActivityLogs ex:log_001 .
 
 ex:altruism_A a :DataAltruismOrganisation ;
@@ -23,15 +23,15 @@ ex:altruism_A a :DataAltruismOrganisation ;
     dcat:landingPage <http://example.com/altruism_A> .
 
 ex:log_001 a :AltruismActivityLog ;
-    dct:created "2023-11-13"^^xsd:date ;
+    dcterms:created "2023-11-13"^^xsd:date ;
     :hasDataUser ex:userZ ; 
     :hasFee "1000€"^^xsd:string ;
     dpv:hasPersonalDataHandling [
-        dct:description "Download and reuse anonymised health records to improve healthcare" ;
+        dcterms:description "Download and reuse anonymised health records to improve healthcare" ;
         dpv:hasDuration 6226453 ;
         dpv:hasPurpose :DataAltruism, :ImproveHealthcare ;
         dpv:hasProcessing :Download, :Reuse ;
-        dpv:hasPersonalData dpv-pd:HealthRecord ;
+        dpv:hasPersonalData pd:HealthRecord ;
         dpv:hasTechnicalMeasure dpv:Anonymisation
     ] .
 

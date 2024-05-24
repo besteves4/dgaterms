@@ -1,6 +1,14 @@
-PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
-PREFIX : <http://anon/dgaterms#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX pd: <https://w3id.org/dpv/pd#>
+PREFIX eu-gdpr: <https://w3id.org/dpv/legal/eu/gdpr#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://example.com/>
+PREFIX : <https://w3id.org/dgaterms#>
 
 SELECT DISTINCT ?Provider ?Name ?Web WHERE {
     ?Provider a :DataCooperative .
